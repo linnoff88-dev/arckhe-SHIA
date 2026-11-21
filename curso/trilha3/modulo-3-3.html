@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3.3: Mapeamento de Oportunidades de IA | SHIA</title>
+  <meta name="description" content="Identifique onde a IA gera ganho imediato e construa um roadmap de implementação.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#A855F7',
+            dark: {
+              900: '#111827',
+              800: '#1f2937',
+              700: '#374151',
+              600: '#4b5563'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+
+    /* Tópicos sempre visíveis */
+    .topic-content { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo + INEMA.CLUB -->
+        <div class="flex items-center space-x-3">
+          <a href="../../index.html" class="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">SHIA</span>
+          </a>
+          <span class="text-neutral-500 hidden sm:inline">|</span>
+          <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+            INEMA.CLUB
+          </a>
+        </div>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha0/trilha01.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-yellow-400 hover:bg-yellow-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>0
+          </a>
+          <a href="../trilha1/trilha11.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/trilha21.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="trilha31.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header do Módulo -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 3.3 - TRILHA 3
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">🗺️ Mapeamento de Oportunidades de IA em Processos</h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Identifique onde a IA gera ganho imediato e construa um roadmap de implementação
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-purple-400">10</div>
+        <div class="text-xs text-neutral-400">Tópicos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-purple-400">~2h</div>
+        <div class="text-xs text-neutral-400">Duração</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-purple-400">Avançado</div>
+        <div class="text-xs text-neutral-400">Nível</div>
+      </div>
+    </div>
+
+    <!-- Conceito Central -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl p-8 border border-purple-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💡</span>
+          <div>
+            <h2 class="text-2xl font-bold text-purple-400">Conceito Central</h2>
+            <p class="text-neutral-400">A ideia que vai transformar sua consultoria em IA</p>
+          </div>
+        </div>
+
+        <blockquote class="text-xl text-neutral-200 italic border-l-4 border-purple-500 pl-6 mb-6">
+          "Nem todo processo precisa de IA. O consultor sabe <strong class="text-purple-400">ONDE</strong> ela gera valor real."
+        </blockquote>
+
+        <p class="text-neutral-300 mb-4">
+          O <strong>mapeamento de oportunidades de IA</strong> é a habilidade mais valiosa de um consultor: identificar com precisão cirúrgica onde a inteligência artificial vai gerar ROI imediato, onde vai economizar tempo crítico e onde é apenas uma distração cara.
+        </p>
+
+        <p class="text-neutral-300">
+          Não se trata de automatizar tudo, mas de <strong>priorizar estrategicamente</strong>. Use a matriz Impacto x Esforço, identifique quick wins e construa um roadmap realista que conquiste stakeholders e gere resultados mensuráveis desde o primeiro sprint.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tópicos do Módulo -->
+    <section class="mb-12">
+      <div class="flex items-center mb-6">
+        <span class="text-3xl mr-3">📚</span>
+        <h2 class="text-2xl font-bold">Tópicos do Módulo</h2>
+      </div>
+
+      <div class="space-y-3">
+
+        <!-- Tópico 1 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">1</span>
+            <span class="font-semibold">🔎 Identificando Processos Candidatos</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Nem todo processo se beneficia de IA. Os <strong class="text-purple-400">candidatos ideais</strong> são aqueles que envolvem: tarefas repetitivas em alto volume, análise de grandes volumes de dados, tomada de decisão baseada em padrões, ou interação com clientes em escala.
+                </p>
+                <p class="text-neutral-300">
+                  Comece fazendo um <strong>inventário de processos</strong> da empresa. Documente cada etapa, identifique gargalos, meça tempos e custos. Processos com alta variabilidade, alto volume de dados não estruturados ou alto custo de erro humano são os alvos prioritários.
+                </p>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30 mb-4">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Exemplo de Prompt</h5>
+                <code class="text-sm text-neutral-300 block bg-dark-900/50 p-3 rounded">
+                  "Atue como um consultor de processos. Ajude-me a criar um checklist para identificar processos candidatos à automação com IA em uma empresa de [setor]. Liste 10 critérios objetivos para priorização."
+                </code>
+              </div>
+
+              <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+                <h5 class="font-bold text-purple-400 mb-2">🎯 Ponto-Chave</h5>
+                <p class="text-neutral-300 text-sm">
+                  Processos repetitivos + alto volume de dados + custo de erro = candidatos ideais para IA.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 2 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">2</span>
+            <span class="font-semibold">📊 Matriz Impacto x Esforço</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  A <strong class="text-purple-400">Matriz Impacto x Esforço</strong> é a ferramenta de priorização número 1. Eixo X = Esforço de implementação (tempo, custo, complexidade técnica). Eixo Y = Impacto no negócio (ROI, economia de tempo, melhoria de qualidade).
+                </p>
+                <p class="text-neutral-300">
+                  Divida em quatro quadrantes: <strong>Quick Wins</strong> (alto impacto, baixo esforço - faça AGORA), <strong>Grandes Projetos</strong> (alto impacto, alto esforço - planeje bem), <strong>Evite</strong> (baixo impacto, alto esforço), <strong>Talvez Depois</strong> (baixo impacto, baixo esforço).
+                </p>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                <h5 class="font-bold text-emerald-400 mb-2">📊 Exemplo de Matriz</h5>
+                <p class="text-neutral-300 text-sm mb-2">
+                  <strong>Alto Impacto + Baixo Esforço (Quick Wins):</strong> Chatbot de FAQ, automação de e-mail marketing<br>
+                  <strong>Alto Impacto + Alto Esforço (Grandes Projetos):</strong> Sistema de recomendação personalizado, previsão de demanda<br>
+                  <strong>Baixo Impacto + Baixo Esforço:</strong> Geração automática de legendas<br>
+                  <strong>Baixo Impacto + Alto Esforço (Evite):</strong> IA para prever clima interno da empresa
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 3 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">3</span>
+            <span class="font-semibold">⚡ Quick Wins com IA</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  <strong class="text-purple-400">Quick Wins</strong> são projetos que geram resultados visíveis em semanas, não meses. Eles são essenciais para conquistar buy-in da liderança e criar momentum para projetos maiores.
+                </p>
+                <p class="text-neutral-300">
+                  Exemplos clássicos: automação de triagem de e-mails, chatbot para FAQs, classificação automática de documentos, geração de relatórios padronizados, análise de sentimento em reviews de clientes. Use ferramentas no-code/low-code sempre que possível para acelerar.
+                </p>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                <h5 class="font-bold text-yellow-400 mb-2">🎯 Critérios de Quick Win</h5>
+                <ul class="text-neutral-300 text-sm space-y-1">
+                  <li>• Implementável em 2-6 semanas</li>
+                  <li>• ROI mensurável e visível (economiza X horas/semana ou R$ Y/mês)</li>
+                  <li>• Baixo risco de falha (use casos de uso já validados)</li>
+                  <li>• Afeta processos visíveis (para stakeholders perceberem)</li>
+                </ul>
+          </div>
+        </div>
+
+        <!-- Tópico 4 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">4</span>
+            <span class="font-semibold">🔄 Automação de Processos</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  A <strong>automação de processos com IA</strong> vai além do RPA (Robotic Process Automation). Enquanto o RPA segue regras fixas, a IA lida com exceções, aprende com padrões e toma decisões em cenários não estruturados.
+                </p>
+                <p class="text-neutral-300">
+                  Áreas comuns: <strong>Processamento de documentos</strong> (OCR + NLP para extrair dados de contratos, notas fiscais), <strong>Triagem inteligente</strong> (classificar tickets de suporte, priorizar leads), <strong>Validação de dados</strong> (detectar inconsistências em cadastros).
+                </p>
+              </div>
+
+              <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+                <h5 class="font-bold text-purple-400 mb-2">🔧 Exemplo Prático</h5>
+                <p class="text-neutral-300 text-sm">
+                  Uma empresa de seguros recebe milhares de sinistros/mês em PDFs e fotos. IA extrai dados, classifica tipo de sinistro, valida consistência com apólice e envia para o analista certo — reduzindo tempo de triagem de 15min para 30 segundos.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 5 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">5</span>
+            <span class="font-semibold">🎯 IA para Tomada de Decisão</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  IA como <strong class="text-purple-400">suporte à decisão</strong> (não substituição). Sistemas que analisam dados históricos, identificam padrões e oferecem recomendações baseadas em probabilidades. O humano sempre tem a palavra final.
+                </p>
+                <p class="text-neutral-300">
+                  Casos de uso: <strong>Previsão de churn</strong> (quais clientes estão em risco de cancelar?), <strong>Credit scoring</strong> (qual a probabilidade de inadimplência?), <strong>Precificação dinâmica</strong> (qual o preço ótimo agora?), <strong>Alocação de recursos</strong> (onde investir primeiro?).
+                </p>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Prompt Estratégico</h5>
+                <code class="text-sm text-neutral-300 block bg-dark-900/50 p-3 rounded">
+                  "Atue como um cientista de dados. Ajude-me a desenhar um modelo de previsão de churn para uma empresa SaaS B2B. Quais features usar? Como medir sucesso? Como apresentar insights para não-técnicos?"
+                </code>
+          </div>
+        </div>
+
+        <!-- Tópico 6 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">6</span>
+            <span class="font-semibold">💬 Atendimento ao Cliente</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  <strong>Atendimento ao cliente</strong> é a área com maior adoção de IA: chatbots, análise de sentimento, automação de respostas, transcrição e análise de chamadas. O objetivo não é eliminar atendentes, mas liberá-los para casos complexos.
+                </p>
+                <p class="text-neutral-300">
+                  Estratégia em camadas: <strong>Nível 1 (IA):</strong> Responde FAQs, consulta pedidos, agenda retornos. <strong>Nível 2 (Humano + IA):</strong> Atendente usa IA para sugerir respostas, buscar histórico, analisar emoção do cliente. <strong>Nível 3 (Humano especialista):</strong> Casos críticos.
+                </p>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                <h5 class="font-bold text-emerald-400 mb-2">📈 Métricas de Sucesso</h5>
+                <ul class="text-neutral-300 text-sm space-y-1">
+                  <li>• % de tickets resolvidos sem intervenção humana (target: 30-50%)</li>
+                  <li>• Tempo médio de primeira resposta (redução de 70%+)</li>
+                  <li>• CSAT (Customer Satisfaction) mantido ou melhorado</li>
+                  <li>• Custo por ticket (redução de 40-60%)</li>
+                </ul>
+          </div>
+        </div>
+
+        <!-- Tópico 7 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">7</span>
+            <span class="font-semibold">📈 Marketing e Vendas</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  <strong class="text-purple-400">Marketing e Vendas</strong> são áreas ricas para IA: lead scoring (quais leads têm maior probabilidade de conversão?), personalização em escala (e-mails, ofertas, conteúdo dinâmico), otimização de campanhas (A/B testing automatizado).
+                </p>
+                <p class="text-neutral-300">
+                  Na <strong>geração de conteúdo</strong>, use IA para rascunhos, variações de copy, headlines, descrições de produtos. Na <strong>análise de performance</strong>, use para detectar padrões em dados de campanha e sugerir otimizações.
+                </p>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                <h5 class="font-bold text-yellow-400 mb-2">🎯 Caso de Uso: Lead Scoring</h5>
+                <p class="text-neutral-300 text-sm">
+                  Sistema analisa comportamento do lead (páginas visitadas, downloads, engajamento em e-mails) e dados firmográficos (setor, tamanho, cargo). Atribui score de 0-100. Leads com score >70 vão direto para vendas. <strong>Resultado:</strong> +35% na taxa de conversão.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 8 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">8</span>
+            <span class="font-semibold">🏭 Operações e Supply Chain</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  <strong>Operações e Supply Chain</strong> se beneficiam de IA preditiva: previsão de demanda, otimização de estoque, manutenção preditiva (evitar quebras de equipamentos), otimização de rotas de logística.
+                </p>
+                <p class="text-neutral-300">
+                  <strong>Manutenção preditiva:</strong> Sensores em equipamentos geram dados em tempo real. IA detecta padrões que precedem falhas e agenda manutenção antes da quebra. <strong>ROI:</strong> Redução de 30-50% em downtime não planejado.
+                </p>
+              </div>
+
+              <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+                <h5 class="font-bold text-purple-400 mb-2">🔧 Exemplo: Previsão de Demanda</h5>
+                <p class="text-neutral-300 text-sm">
+                  Varejista usa IA para prever demanda por SKU/loja com 15 dias de antecedência. Considera histórico de vendas, sazonalidade, promoções, clima, eventos locais. <strong>Resultado:</strong> -25% em estoque parado, -40% em rupturas.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 9 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">9</span>
+            <span class="font-semibold">👥 RH e Gestão de Talentos</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  <strong class="text-purple-400">RH e Gestão de Talentos:</strong> Triagem de currículos (análise de CVs em segundos), matching candidato-vaga (além de keywords, analisa fit cultural), análise de desempenho (identifica padrões em avaliações).
+                </p>
+                <p class="text-neutral-300">
+                  <strong>Atenção com viés!</strong> Modelos de IA em RH são especialmente sensíveis a viés (gênero, raça, idade). Sempre audite resultados, use dados diversos no treinamento e mantenha humanos na decisão final. IA sugere, humano decide.
+                </p>
+              </div>
+
+              <div class="bg-red-900/20 p-4 rounded-lg border border-red-500/30">
+                <h5 class="font-bold text-red-400 mb-2">⚠️ Cuidado com Viés</h5>
+                <p class="text-neutral-300 text-sm">
+                  Amazon descontinuou sua ferramenta de triagem de CVs porque o modelo aprendeu viés de gênero dos dados históricos (que favoreciam homens em TI). <strong>Lição:</strong> Dados enviesados geram modelos enviesados. Audite sempre!
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 10 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">10</span>
+            <span class="font-semibold">💼 Apresentando o Roadmap</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-gradient-to-br from-purple-900/20 to-dark-700/50 p-4 rounded-lg border border-purple-500/30 mb-4">
+                <h5 class="font-bold text-purple-400 mb-3">🗺️ Estrutura do Roadmap de IA</h5>
+                <ol class="text-neutral-300 space-y-3">
+                  <li class="flex items-start">
+                    <span class="font-bold text-purple-400 mr-2">1.</span>
+                    <span><strong>Fase 1 (0-3 meses): Quick Wins</strong> — Projetos de baixo esforço e alto impacto para gerar momentum</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="font-bold text-purple-400 mr-2">2.</span>
+                    <span><strong>Fase 2 (3-9 meses): Grandes Projetos</strong> — Implementações complexas com ROI alto, mas que exigem mais tempo</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="font-bold text-purple-400 mr-2">3.</span>
+                    <span><strong>Fase 3 (9-18 meses): Transformação</strong> — Projetos estratégicos que mudam o modelo de negócio</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="font-bold text-purple-400 mr-2">4.</span>
+                    <span><strong>KPIs e Métricas:</strong> Defina métricas claras para cada projeto (tempo economizado, custo reduzido, receita aumentada)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="font-bold text-purple-400 mr-2">5.</span>
+                    <span><strong>Governança:</strong> Quem aprova? Quem monitora? Como ajustar o roadmap?</span>
+                  </li>
+                </ol>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                <h5 class="font-bold text-emerald-400 mb-2">💡 Dica de Apresentação</h5>
+                <p class="text-neutral-300 text-sm">
+                  Use a <strong>linguagem de negócios</strong>, não de tecnologia. Em vez de "implementar modelo de NLP com BERT", diga "reduzir tempo de triagem de e-mails em 70% e economizar 200 horas/mês". Stakeholders se importam com ROI, não com arquitetura.
+                </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-primary/10 rounded-2xl p-8 border border-primary/30">
+        <h2 class="text-2xl font-bold text-primary mb-6 text-center">✅ Resumo do Módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Nem todo processo precisa de IA</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Use Matriz Impacto x Esforço para priorizar</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Quick Wins geram momentum e buy-in</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">IA apoia decisões, não substitui humanos</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Atendimento, Marketing e Operações são áreas ricas</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Roadmap em fases com KPIs claros</span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="trilha31.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-primary/90 transition-colors">
+            <span>Voltar para Trilha 3</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegação -->
+    <div class="flex justify-between items-center">
+      <a href="modulo-3-2.html" class="inline-flex items-center space-x-2 text-neutral-400 hover:text-purple-400 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Anterior: Módulo 3.2</span>
+      </a>
+      <a href="modulo-3-4.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-purple-500 text-white rounded-lg font-bold hover:bg-purple-400 transition-colors">
+        <span>Próximo: Módulo 3.4</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        SHIA - Super Humanos Inteligência Aumentada | Trilha 3 - Módulo 3.3
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+  </script>
+
+</body>
+</html>

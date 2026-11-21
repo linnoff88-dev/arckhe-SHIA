@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.3: Criação Multimídia Sem Barreiras Técnicas | SHIA</title>
+  <meta name="description" content="Aprenda a criar música, vídeo, áudio, ilustrações e muito mais usando ferramentas de IA generativa. Democratize a criação multimídia.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10b981',
+            dark: {
+              900: '#111827',
+              800: '#1f2937',
+              700: '#374151',
+              600: '#4b5563'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+
+    /* Tópicos sempre visíveis */
+    .topic-content { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo + INEMA.CLUB -->
+        <div class="flex items-center space-x-3">
+          <a href="../../index.html" class="flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 transition-colors">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">SHIA</span>
+          </a>
+          <span class="text-neutral-500 hidden sm:inline">|</span>
+          <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+            INEMA.CLUB
+          </a>
+        </div>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha0/trilha01.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-yellow-400 hover:bg-yellow-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>0
+          </a>
+          <a href="trilha11.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header do Módulo -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 1.3 - TRILHA 1
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">🎨 Criação Multimídia Sem Barreiras Técnicas</h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Música, vídeo, arte, voz, 3D e mais: democratizando a criação de conteúdo com IA
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">10</div>
+        <div class="text-xs text-neutral-400">Tópicos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">~3h</div>
+        <div class="text-xs text-neutral-400">Duração</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">Prático</div>
+        <div class="text-xs text-neutral-400">Nível</div>
+      </div>
+    </div>
+
+    <!-- Imagem do Módulo -->
+    <div class="mb-12">
+      <img
+        src="../../doc/imagens/arte/estilo_unico_ia.webp"
+        alt="Desenvolvendo seu estilo único com IA"
+        class="w-full max-w-3xl mx-auto rounded-2xl shadow-xl border border-dark-600/50"
+      />
+    </div>
+
+    <!-- Conceito Central -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💡</span>
+          <div>
+            <h2 class="text-2xl font-bold text-emerald-400">Conceito Central</h2>
+            <p class="text-neutral-400">A democratização da criação multimídia</p>
+          </div>
+        </div>
+
+        <blockquote class="text-xl text-neutral-200 italic border-l-4 border-emerald-500 pl-6 mb-6">
+          "A IA generativa está eliminando as <strong class="text-emerald-400">barreiras técnicas</strong> entre a ideia e a criação. Agora, qualquer pessoa pode criar música, vídeos, arte e conteúdo multimídia profissional."
+        </blockquote>
+
+        <p class="text-neutral-300 mb-4">
+          Por décadas, a criação de conteúdo multimídia exigiu <strong>anos de treinamento técnico</strong>: músicos precisavam dominar instrumentos e teoria musical, designers precisavam aprender softwares complexos, cineastas precisavam de equipamentos caros e conhecimentos de edição.
+        </p>
+
+        <p class="text-neutral-300">
+          As ferramentas de <strong class="text-emerald-400">IA generativa</strong> estão mudando esse cenário radicalmente. Agora, a barreira de entrada é apenas a <strong>criatividade e a clareza da visão</strong>. A tecnologia cuida da execução técnica, permitindo que criadores foquem no que realmente importa: a <strong>ideia e a mensagem</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tópicos do Módulo -->
+    <section class="mb-12">
+      <div class="flex items-center mb-6">
+        <span class="text-3xl mr-3">📚</span>
+        <h2 class="text-2xl font-bold">Tópicos do Módulo</h2>
+      </div>
+
+      <div class="space-y-3">
+
+        <!-- Tópico 1 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">1</span>
+            <span class="font-semibold">🎵 Música com IA: Do Zero à Composição (Suno, Udio)</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Ferramentas como <strong class="text-emerald-400">Suno</strong> e <strong class="text-emerald-400">Udio</strong> permitem criar músicas completas apenas descrevendo o estilo, mood e letra. Você não precisa saber teoria musical, tocar instrumentos ou usar DAWs complexas.
+                </p>
+                <p class="text-neutral-300">
+                  Basta descrever: "Uma balada acústica melancólica sobre despedidas, com violão fingerstyle e voz feminina suave" e a IA gera a composição completa com melodia, arranjo e produção profissional.
+                </p>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30 mb-4">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Exemplo de Prompt</h5>
+                <code class="text-sm text-neutral-300 block bg-dark-900/50 p-3 rounded">
+                  "Crie uma música eletrônica energética no estilo synthwave dos anos 80, com batidas fortes, sintetizadores nostálgicos e vocais robóticos. Tema: corrida futurista. Duração: 3 minutos."
+                </code>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                <h5 class="font-bold text-emerald-400 mb-2">🎯 Ponto-Chave</h5>
+                <p class="text-neutral-300 text-sm">
+                  A música gerada por IA pode servir como base para trilhas sonoras, backgrounds para vídeos, podcasts ou mesmo releases artísticos. O criador mantém o controle criativo, mas delega a execução técnica.
+                </p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Tópico 2 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">2</span>
+            <span class="font-semibold">🎬 Vídeo e Animação com IA (Runway, Pika, Sora)</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Ferramentas como <strong class="text-emerald-400">Runway ML</strong>, <strong class="text-emerald-400">Pika Labs</strong> e <strong class="text-emerald-400">Sora</strong> (OpenAI) permitem criar vídeos e animações apenas descrevendo cenas. Você pode gerar desde clipes curtos até sequências cinematográficas.
+                </p>
+                <p class="text-neutral-300">
+                  Use casos incluem: transformar texto em vídeo (text-to-video), animar imagens estáticas, editar vídeos com comandos de texto, criar transições e efeitos especiais sem After Effects.
+                </p>
+              </div>
+
+              <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30 mb-4">
+                <h5 class="font-bold text-purple-400 mb-2">🛠️ Ferramentas Principais</h5>
+                <ul class="text-sm text-neutral-300 space-y-2">
+                  <li><strong>Runway ML:</strong> Edição de vídeo com IA, remoção de objetos, green screen automático</li>
+                  <li><strong>Pika Labs:</strong> Geração de vídeos curtos a partir de texto ou imagens</li>
+                  <li><strong>Sora (OpenAI):</strong> Vídeos longos e realistas com física e movimento consistentes</li>
+                  <li><strong>D-ID:</strong> Avatares falantes a partir de fotos estáticas</li>
+                </ul>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                <h5 class="font-bold text-emerald-400 mb-2">🎯 Aplicação Prática</h5>
+                <p class="text-neutral-300 text-sm">
+                  Crie anúncios para redes sociais, videoclipes conceituais, conteúdo educacional animado ou até mesmo protótipos de filmes sem precisar de equipe de produção ou equipamentos caros.
+                </p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Tópico 3 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">3</span>
+            <span class="font-semibold">🎙️ Voz e Áudio Generativo (ElevenLabs)</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  <strong class="text-emerald-400">ElevenLabs</strong> e outras ferramentas de síntese de voz permitem criar narrações profissionais em múltiplos idiomas e estilos, clonar vozes (com permissão), e até gerar áudio com emoções específicas.
+                </p>
+                <p class="text-neutral-300">
+                  Ideal para audiobooks, podcasts, narrações para vídeos, assistentes virtuais, jogos, e localização de conteúdo. A qualidade é indistinguível de vozes humanas reais.
+                </p>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30 mb-4">
+                <h5 class="font-bold text-blue-400 mb-2">🎭 Controle de Emoção</h5>
+                <p class="text-neutral-300 text-sm">
+                  Você pode ajustar parâmetros como tom emocional (feliz, triste, sério), estilo de fala (casual, formal, dramático), velocidade e ênfase em palavras específicas.
+                </p>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                <h5 class="font-bold text-yellow-400 mb-2">⚠️ Ética e Consentimento</h5>
+                <p class="text-neutral-300 text-sm">
+                  Sempre obtenha permissão antes de clonar a voz de alguém. Use a tecnologia de forma responsável, evitando desinformação e deepfakes maliciosos.
+                </p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Tópico 4 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">4</span>
+            <span class="font-semibold">🖼️ Ilustração e Design Gráfico</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Ferramentas como <strong class="text-emerald-400">Midjourney</strong>, <strong class="text-emerald-400">DALL-E 3</strong>, <strong class="text-emerald-400">Stable Diffusion</strong> e <strong class="text-emerald-400">Adobe Firefly</strong> permitem criar ilustrações, logos, posters, capas de livros e arte conceitual apenas descrevendo o que você imagina.
+                </p>
+                <p class="text-neutral-300">
+                  Você pode especificar estilos artísticos (aquarela, pixel art, fotorrealismo), composições, paleta de cores e até referenciar artistas (com cuidado ético).
+                </p>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+                  <h5 class="font-bold text-purple-400 mb-2">🎨 Para Ilustração</h5>
+                  <p class="text-neutral-300 text-sm">Midjourney, DALL-E, Stable Diffusion para arte conceitual, personagens, cenários</p>
+                </div>
+                <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                  <h5 class="font-bold text-blue-400 mb-2">📐 Para Design</h5>
+                  <p class="text-neutral-300 text-sm">Canva AI, Adobe Firefly, Recraft para layouts, logos, materiais de marketing</p>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <!-- Tópico 5 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">5</span>
+            <span class="font-semibold">📸 Fotografia e Edição com IA</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Além de gerar imagens fotorrealistas, a IA pode aprimorar fotografias reais: remover fundos, melhorar resolução (upscaling), corrigir iluminação, remover objetos indesejados e até mudar expressões faciais.
+                </p>
+                <p class="text-neutral-300">
+                  Ferramentas como <strong class="text-emerald-400">Luminar Neo</strong>, <strong class="text-emerald-400">Topaz Labs</strong>, <strong class="text-emerald-400">Photoshop AI</strong> e <strong class="text-emerald-400">Remove.bg</strong> automatizam tarefas que antes levavam horas no Photoshop.
+                </p>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                <h5 class="font-bold text-emerald-400 mb-2">✨ Casos de Uso</h5>
+                <ul class="text-neutral-300 text-sm space-y-1">
+                  <li>• <strong>E-commerce:</strong> Fotos de produtos em diferentes cenários sem photoshoot</li>
+                  <li>• <strong>Restauração:</strong> Melhorar qualidade de fotos antigas ou de baixa resolução</li>
+                  <li>• <strong>Retratos:</strong> Ajustes de iluminação, pele e expressão automáticos</li>
+                  <li>• <strong>Imóveis:</strong> Renderizar ambientes decorados a partir de espaços vazios</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+
+        <!-- Tópico 6 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">6</span>
+            <span class="font-semibold">🎮 Assets para Games e 3D</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Desenvolvedores de jogos indie e criadores 3D agora podem gerar <strong class="text-emerald-400">assets</strong> completos com IA: texturas, modelos 3D, sprites, concept art e até animações.
+                </p>
+                <p class="text-neutral-300">
+                  Ferramentas como <strong>Scenario.gg</strong>, <strong>Leonardo.ai</strong>, <strong>Meshy AI</strong> e <strong>Polycam</strong> permitem criar personagens, ambientes, objetos e texturas em minutos.
+                </p>
+              </div>
+
+              <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30 mb-4">
+                <h5 class="font-bold text-purple-400 mb-2">🛠️ Ferramentas Especializadas</h5>
+                <ul class="text-sm text-neutral-300 space-y-2">
+                  <li><strong>Scenario.gg:</strong> Geração de assets 2D consistentes para games</li>
+                  <li><strong>Meshy AI:</strong> Texto para modelo 3D em segundos</li>
+                  <li><strong>Polycam:</strong> Escanear objetos reais e transformar em 3D</li>
+                  <li><strong>Skybox AI:</strong> Criar skyboxes e panoramas 360° para ambientes</li>
+                </ul>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                <h5 class="font-bold text-blue-400 mb-2">🎯 Benefício Principal</h5>
+                <p class="text-neutral-300 text-sm">
+                  Equipes pequenas ou desenvolvedores solo podem competir com estúdios grandes, criando assets de qualidade profissional sem orçamento milionário.
+                </p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Tópico 7 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">7</span>
+            <span class="font-semibold">✍️ Escrita Criativa e Roteiros</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  A IA pode ser co-autora em projetos de <strong class="text-emerald-400">escrita criativa</strong>: roteiros de filmes, séries, contos, romances, quadrinhos, peças teatrais e até letras de música.
+                </p>
+                <p class="text-neutral-300">
+                  Ferramentas como <strong>ChatGPT</strong>, <strong>Claude</strong>, <strong>Sudowrite</strong> e <strong>NovelAI</strong> podem gerar diálogos, desenvolver personagens, criar arcos narrativos e sugerir plot twists.
+                </p>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30 mb-4">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Exemplo de Fluxo</h5>
+                <ol class="text-sm text-neutral-300 space-y-2">
+                  <li><strong>1.</strong> Brainstorm de premissa com a IA</li>
+                  <li><strong>2.</strong> Desenvolvimento de personagens e arcos</li>
+                  <li><strong>3.</strong> Estrutura de três atos e outline de cenas</li>
+                  <li><strong>4.</strong> Escrita colaborativa: você escreve cenas, IA sugere diálogos</li>
+                  <li><strong>5.</strong> Revisão e edição com feedback da IA</li>
+                </ol>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                <h5 class="font-bold text-emerald-400 mb-2">🎭 Uso em Roteiros</h5>
+                <p class="text-neutral-300 text-sm">
+                  A IA pode ajudar a formatar roteiros no padrão da indústria (screenplay format), criar loglines, sinopses e até gerar storyboards conceituais descritivos.
+                </p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Tópico 8 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">8</span>
+            <span class="font-semibold">👗 Moda e Design de Produtos</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Designers de moda e produtos podem usar IA para gerar <strong class="text-emerald-400">conceitos visuais</strong> de roupas, acessórios, móveis, utensílios e embalagens rapidamente.
+                </p>
+                <p class="text-neutral-300">
+                  Ferramentas especializadas permitem experimentar com tecidos, padrões, cores e formas antes de produzir protótipos físicos. Ideal para validação rápida de ideias e apresentações para clientes.
+                </p>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+                  <h5 class="font-bold text-purple-400 mb-2">👔 Moda</h5>
+                  <p class="text-neutral-300 text-sm">Gerar looks completos, variações de estampas, combinações de cores, desfiles virtuais</p>
+                </div>
+                <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                  <h5 class="font-bold text-blue-400 mb-2">🛋️ Produtos</h5>
+                  <p class="text-neutral-300 text-sm">Conceitos de móveis, utensílios, embalagens, renderizações fotorrealistas</p>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <!-- Tópico 9 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">9</span>
+            <span class="font-semibold">🏛️ Arquitetura e Design de Interiores</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Arquitetos e designers de interiores podem usar IA para gerar <strong class="text-emerald-400">renderizações fotorrealistas</strong> de projetos, experimentar com layouts, estilos decorativos e paletas de cores instantaneamente.
+                </p>
+                <p class="text-neutral-300">
+                  Ferramentas como <strong>Midjourney</strong> (com prompts arquitetônicos), <strong>Fotor</strong>, <strong>Planner 5D AI</strong> e <strong>HomeDesignsAI</strong> permitem transformar esboços em renderizações profissionais.
+                </p>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30 mb-4">
+                <h5 class="font-bold text-emerald-400 mb-2">🏠 Casos de Uso</h5>
+                <ul class="text-neutral-300 text-sm space-y-1">
+                  <li>• <strong>Apresentações para clientes:</strong> Visualizações realistas antes da obra</li>
+                  <li>• <strong>Exploração de estilos:</strong> Comparar minimalista, industrial, clássico rapidamente</li>
+                  <li>• <strong>Reformas virtuais:</strong> Mostrar como ficaria um ambiente com nova decoração</li>
+                  <li>• <strong>Exterior e paisagismo:</strong> Renderizar fachadas e jardins</li>
+                </ul>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Dica de Prompt</h5>
+                <code class="text-xs text-neutral-300 block bg-dark-900/50 p-2 rounded">
+                  "Interior de sala de estar moderna minimalista, luz natural abundante, piso de madeira clara, sofá cinza, plantas, fotorrealista, renderização arquitetônica"
+                </code>
+              </div>
+          </div>
+        </div>
+
+        <!-- Tópico 10 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">10</span>
+            <span class="font-semibold">🎬 Integrando Mídias em Projetos Completos</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-gradient-to-br from-emerald-900/20 to-dark-700/50 p-4 rounded-lg border border-emerald-500/30 mb-4">
+                <h5 class="font-bold text-emerald-400 mb-3">🚀 O Poder da Integração</h5>
+                <p class="text-neutral-300 mb-3">
+                  O verdadeiro potencial da IA multimídia emerge quando você <strong>combina</strong> diferentes mídias em projetos completos: vídeos com trilha sonora original, curtas-metragens com narração, jogos com assets consistentes, apresentações com design integrado.
+                </p>
+                <p class="text-neutral-300">
+                  Agora, uma <strong>única pessoa</strong> pode produzir conteúdo que antes exigiria equipes inteiras: roteirista + músico + editor + designer + animador.
+                </p>
+              </div>
+
+              <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30 mb-4">
+                <h5 class="font-bold text-purple-400 mb-2">🎥 Exemplo: Curta-Metragem Completo</h5>
+                <ol class="text-sm text-neutral-300 space-y-2">
+                  <li><strong>1. Roteiro:</strong> Escreva com ChatGPT/Claude</li>
+                  <li><strong>2. Storyboard visual:</strong> Gere frames-chave com Midjourney</li>
+                  <li><strong>3. Vídeo:</strong> Crie cenas com Runway/Pika</li>
+                  <li><strong>4. Trilha sonora:</strong> Componha com Suno/Udio</li>
+                  <li><strong>5. Narração:</strong> Gere vozes com ElevenLabs</li>
+                  <li><strong>6. Edição final:</strong> Integre tudo no CapCut ou DaVinci Resolve</li>
+                </ol>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                <h5 class="font-bold text-yellow-400 mb-2">🎯 Mentalidade do Criador Multimídia</h5>
+                <p class="text-neutral-300 text-sm">
+                  Não pense em ferramentas isoladas, mas em <strong>pipelines criativos</strong>. Cada projeto é uma oportunidade de combinar texto, áudio, visual e movimento para contar histórias impactantes.
+                </p>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-primary/10 rounded-2xl p-8 border border-primary/30">
+        <h2 class="text-2xl font-bold text-primary mb-6 text-center">✅ Resumo do Módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Música profissional sem instrumentos (Suno, Udio)</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Vídeos e animações apenas com texto (Runway, Pika, Sora)</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Vozes realistas e narrações (ElevenLabs)</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Arte e design sem Photoshop (Midjourney, DALL-E)</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Assets 3D e para games (Meshy, Scenario)</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Integração de mídias em projetos completos</span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="trilha11.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-primary/90 transition-colors">
+            <span>Voltar para Trilha 1</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegação -->
+    <div class="flex justify-between items-center">
+      <a href="modulo-1-2.html" class="inline-flex items-center space-x-2 text-neutral-400 hover:text-emerald-400 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>← Anterior</span>
+      </a>
+      <a href="modulo-1-4.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-500 text-dark-900 rounded-lg font-bold hover:bg-emerald-400 transition-colors">
+        <span>Próximo →</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        SHIA - Super Humanos Inteligência Aumentada | Trilha 1 - Módulo 1.3
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+  </script>
+
+</body>
+</html>

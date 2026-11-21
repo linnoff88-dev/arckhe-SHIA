@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.6: Ferramentas e Técnicas Avançadas de Geração | SHIA</title>
+  <meta name="description" content="Dominando ferramentas avançadas: ControlNet, Inpainting, LoRAs e workflows profissionais para geração de imagens com IA.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10B981',
+            dark: {
+              900: '#111827',
+              800: '#1f2937',
+              700: '#374151',
+              600: '#4b5563'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+
+    /* Tópicos sempre visíveis */
+    .topic-content { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo + INEMA.CLUB -->
+        <div class="flex items-center space-x-3">
+          <a href="../../index.html" class="flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 transition-colors">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">SHIA</span>
+          </a>
+          <span class="text-neutral-500 hidden sm:inline">|</span>
+          <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+            INEMA.CLUB
+          </a>
+        </div>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha0/trilha01.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-yellow-400 hover:bg-yellow-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>0
+          </a>
+          <a href="trilha12.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header do Módulo -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 1.6 - TRILHA 1
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">🛠️ Ferramentas e Técnicas Avançadas de Geração</h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Dominando as ferramentas profissionais de geração de imagens
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">10</div>
+        <div class="text-xs text-neutral-400">Tópicos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">~3h</div>
+        <div class="text-xs text-neutral-400">Duração</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">Avançado</div>
+        <div class="text-xs text-neutral-400">Nível</div>
+      </div>
+    </div>
+
+    <!-- Conceito Central -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💡</span>
+          <div>
+            <h2 class="text-2xl font-bold text-emerald-400">Conceito Central</h2>
+            <p class="text-neutral-400">Ferramentas avançadas transformam ideias em realidade visual</p>
+          </div>
+        </div>
+
+        <blockquote class="text-xl text-neutral-200 italic border-l-4 border-emerald-500 pl-6 mb-6">
+          "A diferença entre um gerador casual e um profissional está no <strong class="text-emerald-400">DOMÍNIO DAS FERRAMENTAS</strong>."
+        </blockquote>
+
+        <p class="text-neutral-300 mb-4">
+          ControlNet, Inpainting, LoRAs e workflows avançados são as ferramentas que separam resultados amadores de produções profissionais. Cada técnica oferece <strong>controle preciso</strong> sobre diferentes aspectos da geração.
+        </p>
+
+        <p class="text-neutral-300">
+          Este módulo revela as técnicas que profissionais usam para criar imagens consistentes, controladas e de qualidade comercial.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tópicos do Módulo -->
+    <section class="mb-12">
+      <div class="flex items-center mb-6">
+        <span class="text-3xl mr-3">📚</span>
+        <h2 class="text-2xl font-bold">Tópicos do Módulo</h2>
+      </div>
+
+      <div class="space-y-3">
+
+        <!-- Tópico 1 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">1</span>
+            <span class="font-semibold">🎮 Dominando ControlNet</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                ControlNet revolucionou a geração de imagens ao permitir <strong class="text-emerald-400">controle preciso sobre poses, composição e estrutura</strong>.
+              </p>
+              <p class="text-neutral-300">
+                Principais modos: Canny (bordas), Depth (profundidade), OpenPose (poses humanas), Scribble (rascunhos), Normal Map, Segmentation. Cada um oferece controle sobre aspectos específicos da imagem.
+              </p>
+            </div>
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h5 class="font-bold text-emerald-400 mb-2">🎯 Ponto-Chave</h5>
+              <p class="text-neutral-300 text-sm">
+                ControlNet transforma referências em guias precisos. Use para manter consistência de personagens, recriar poses específicas ou controlar composição exata.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 2 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">2</span>
+            <span class="font-semibold">🖌️ Inpainting e Outpainting Avançado</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                <strong class="text-emerald-400">Inpainting</strong> permite editar áreas específicas mantendo o restante intacto. <strong class="text-emerald-400">Outpainting</strong> expande imagens além de seus limites originais.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ Correção de detalhes específicos</li>
+                <li>✓ Remoção e substituição de elementos</li>
+                <li>✓ Expansão de canvas criativa</li>
+                <li>✓ Técnicas de mascaramento avançado</li>
+              </ul>
+            </div>
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h5 class="font-bold text-blue-400 mb-2">💡 Dica Profissional</h5>
+              <p class="text-neutral-300 text-sm">
+                Use máscaras com bordas suaves (feathering) para transições naturais. Combine inpainting com ControlNet para correções precisas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 3 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">3</span>
+            <span class="font-semibold">🔄 Image-to-Image Profissional</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Image-to-Image transforma imagens existentes mantendo estrutura ou estilo. <strong class="text-emerald-400">Denoising strength</strong> controla quanto da imagem original é preservada.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>• 0.1-0.3: Mudanças sutis, cores e texturas</li>
+                <li>• 0.4-0.6: Transformações moderadas</li>
+                <li>• 0.7-0.9: Reimaginação completa</li>
+              </ul>
+            </div>
+            <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+              <h5 class="font-bold text-purple-400 mb-2">🎨 Aplicações</h5>
+              <p class="text-neutral-300 text-sm">
+                Sketch-to-render, transferência de estilo, variações criativas, upscaling inteligente, correção de iluminação.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 4 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">4</span>
+            <span class="font-semibold">🎲 Trabalhando com Seeds e Variações</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                <strong class="text-emerald-400">Seeds</strong> são a chave da reprodutibilidade. Mesma seed + mesmo prompt + mesmos parâmetros = mesma imagem.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ Salve seeds de resultados excepcionais</li>
+                <li>✓ Use variações de seed para explorar</li>
+                <li>✓ Combine seeds com ControlNet para consistência</li>
+                <li>✓ Subseed para micro-variações</li>
+              </ul>
+            </div>
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h5 class="font-bold text-emerald-400 mb-2">⚡ Workflow Eficiente</h5>
+              <p class="text-neutral-300 text-sm">
+                Gere batch com seeds incrementais. Identifique padrões. Refine prompts mantendo seeds que funcionaram.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 5 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">5</span>
+            <span class="font-semibold">⚙️ Sampling Methods e CFG Scale</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                <strong class="text-emerald-400">Sampling methods</strong> definem como a IA processa ruído em imagem. <strong>CFG Scale</strong> controla aderência ao prompt.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>• <strong>Euler A:</strong> Rápido, criativo, variado</li>
+                <li>• <strong>DPM++ 2M Karras:</strong> Qualidade alta</li>
+                <li>• <strong>DDIM:</strong> Preciso, reprodutível</li>
+                <li>• CFG 7-12: Equilibrado (recomendado)</li>
+              </ul>
+            </div>
+            <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+              <h5 class="font-bold text-yellow-400 mb-2">⚠️ Ajuste Fino</h5>
+              <p class="text-neutral-300 text-sm">
+                CFG baixo (3-6) = criativo, pode desviar. CFG alto (15+) = oversaturado, artefatos. Steps: 20-30 geralmente suficiente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 6 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">6</span>
+            <span class="font-semibold">🎨 LoRAs e Textual Inversions</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                <strong class="text-emerald-400">LoRAs</strong> (Low-Rank Adaptations) adicionam estilos, conceitos ou personagens específicos sem treinar modelo completo.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ Estilos artísticos específicos</li>
+                <li>✓ Personagens e rostos consistentes</li>
+                <li>✓ Objetos ou conceitos customizados</li>
+                <li>✓ Combine múltiplos LoRAs (cuidado com pesos)</li>
+              </ul>
+            </div>
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h5 class="font-bold text-blue-400 mb-2">📖 Textual Inversion</h5>
+              <p class="text-neutral-300 text-sm">
+                Embeddings menores que LoRAs. Ideal para conceitos simples. Use tokens específicos no prompt para ativar.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 7 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">7</span>
+            <span class="font-semibold">🔧 Custom Models e Checkpoints</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Além do Stable Diffusion base, existem <strong class="text-emerald-400">centenas de checkpoints especializados</strong> treinados para propósitos específicos.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>• <strong>Realistic Vision:</strong> Fotorealismo</li>
+                <li>• <strong>DreamShaper:</strong> Versatilidade</li>
+                <li>• <strong>Anything:</strong> Anime/ilustração</li>
+                <li>• <strong>Deliberate:</strong> Controle artístico</li>
+              </ul>
+            </div>
+            <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+              <h5 class="font-bold text-purple-400 mb-2">🔍 Fontes</h5>
+              <p class="text-neutral-300 text-sm">
+                Civitai.com, HuggingFace. Leia descrições, veja exemplos, teste prompts recomendados antes de adotar.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 8 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">8</span>
+            <span class="font-semibold">🌊 ComfyUI: Workflows Avançados</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                <strong class="text-emerald-400">ComfyUI</strong> é interface baseada em nós que permite criar workflows complexos e reprodutíveis.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ Visualize pipeline completo</li>
+                <li>✓ Combine múltiplas técnicas</li>
+                <li>✓ Reutilize workflows salvos</li>
+                <li>✓ Automação e batch processing</li>
+              </ul>
+            </div>
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h5 class="font-bold text-emerald-400 mb-2">🚀 Nível Profissional</h5>
+              <p class="text-neutral-300 text-sm">
+                Crie workflows que combinam: ControlNet + LoRA + Upscaling + Inpainting em processo único e replicável.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 9 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">9</span>
+            <span class="font-semibold">✨ Embeddings e Estilos Customizados</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Crie <strong class="text-emerald-400">biblioteca de estilos próprios</strong> através de embeddings customizados e combinações de técnicas.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ Treine embeddings com suas referências</li>
+                <li>✓ Documente combinações que funcionam</li>
+                <li>✓ Crie presets para projetos recorrentes</li>
+                <li>✓ Desenvolva assinatura visual única</li>
+              </ul>
+            </div>
+            <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+              <h5 class="font-bold text-yellow-400 mb-2">💼 Valor Comercial</h5>
+              <p class="text-neutral-300 text-sm">
+                Estilos customizados consistentes são valiosos comercialmente. Clientes pagam por coerência visual e identidade única.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 10 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">10</span>
+            <span class="font-semibold">⚡ Otimização de Hardware e Cloud</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Hardware adequado acelera workflow. <strong class="text-emerald-400">Cloud</strong> oferece alternativa quando hardware local é limitado.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>• GPU recomendada: 12GB+ VRAM</li>
+                <li>• RAM: 16GB+ mínimo</li>
+                <li>• Cloud: RunPod, Vast.ai, Google Colab</li>
+                <li>• Otimize: xFormers, batch size, precision</li>
+              </ul>
+            </div>
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h5 class="font-bold text-blue-400 mb-2">💰 Custo-Benefício</h5>
+              <p class="text-neutral-300 text-sm">
+                Calcule: custo/hora cloud vs. investimento em GPU. Para uso intenso, GPU própria compensa. Para experimentação, cloud é ideal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-primary/10 rounded-2xl p-8 border border-primary/30">
+        <h2 class="text-2xl font-bold text-primary mb-6 text-center">✅ Resumo do Módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">ControlNet para controle preciso</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Inpainting/Outpainting avançado</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Seeds para reprodutibilidade</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Sampling e CFG otimizados</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">LoRAs para estilos customizados</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">ComfyUI workflows profissionais</span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="trilha12.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-primary/90 transition-colors">
+            <span>Voltar para Trilha 1</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegação -->
+    <div class="flex justify-between items-center">
+      <a href="modulo-1-5.html" class="inline-flex items-center space-x-2 text-neutral-400 hover:text-emerald-400 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Módulo 1.5</span>
+      </a>
+      <a href="modulo-1-7.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-500 text-dark-900 rounded-lg font-bold hover:bg-emerald-400 transition-colors">
+        <span>Próximo: Módulo 1.7</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        SHIA - Super Humanos Inteligência Aumentada | Trilha 1 - Módulo 1.6
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+  </script>
+
+</body>
+</html>

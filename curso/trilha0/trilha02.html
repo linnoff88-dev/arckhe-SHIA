@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 0: Introdução - Parte 2 | SHIA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .border-dark-700 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-200 { color: #334155 !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-3">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">SHIA</span>
+          </a>
+          <span class="text-neutral-500 hidden sm:inline">|</span>
+          <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+            INEMA.CLUB
+          </a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="trilha01.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">
+            <span class="hidden sm:inline">Trilha </span>0
+          </a>
+          <a href="../trilha1/trilha11.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/trilha21.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/trilha31.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-400 rounded-full text-sm font-semibold mb-4">
+        TRILHA 0 - PARTE 2: APROFUNDAMENTO
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        🚀 Dominando a IA na Prática
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
+        Técnicas avançadas, ética, aprendizado contínuo e projeto final para consolidar seu conhecimento.
+      </p>
+    </div>
+
+    <!-- Imagem de Capa -->
+    <div class="mb-12">
+      <img
+        src="../../doc/imagens/introducao/ecossistema_ia_mapa.webp"
+        alt="Ecossistema de IA: Mapa completo das ferramentas e tecnologias"
+        class="w-full max-w-4xl mx-auto rounded-2xl shadow-xl border border-dark-600/50"
+      />
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-yellow-400">5</div>
+        <div class="text-xs text-neutral-400">Módulos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-yellow-400">50</div>
+        <div class="text-xs text-neutral-400">Tópicos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-yellow-400">Parte 2</div>
+        <div class="text-xs text-neutral-400">de 2</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-yellow-400">~5h</div>
+        <div class="text-xs text-neutral-400">Conteúdo</div>
+      </div>
+    </div>
+
+    <!-- Navigation Parts -->
+    <div class="flex justify-center gap-4 mb-12">
+      <a href="trilha01.html" class="px-6 py-3 bg-dark-700 text-neutral-300 rounded-xl font-bold hover:bg-dark-600 transition-colors border border-dark-600">
+        Parte 1 (1-5)
+      </a>
+      <a href="trilha02.html" class="px-6 py-3 bg-yellow-500 text-dark-900 rounded-xl font-bold hover:bg-yellow-400 transition-colors">
+        Parte 2 (6-10)
+      </a>
+    </div>
+
+    <!-- Modules -->
+    <div class="space-y-6">
+
+      <!-- Módulo 0.6 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.6
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">O Mindset da Experimentação</h2>
+              <p class="text-sm text-neutral-400">Como iterar e refinar seus prompts para resultados cada vez melhores</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🧪 A Mentalidade de Experimentador
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Abordar a IA como um laboratório de possibilidades. Todo prompt é uma hipótese a ser testada.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Perfeição vem da iteração, não da primeira tentativa.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Hipótese-teste-aprendizado, falha produtiva, curiosidade sistemática, growth mindset.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔄 O Ciclo de Iteração de Prompts
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Processo: criar → testar → analisar → refinar → repetir. Nunca pare na primeira versão.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Cada iteração traz insights e melhora a qualidade final.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Versão 1, 2, 3..., log de mudanças, métricas de qualidade, comparação.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎯 Definindo Critérios de Sucesso
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Antes de testar, definir o que "bom" significa: precisão, tom, formato, criatividade.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Sem critérios claros, você não sabe se está melhorando ou piorando.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> KPIs de prompt, rubrics, scoring, avaliação subjetiva vs objetiva.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📊 Testando Variações de Prompts
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Testar múltiplas versões variando um elemento por vez para isolar o impacto.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Entender o que funciona e o que não funciona de forma científica.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> A/B testing, variáveis isoladas, controle, documentação.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🌡️ Ajustando Parâmetros: Temperatura e Top-P
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Configurações que controlam a aleatoriedade e criatividade das respostas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Temperatura baixa = previsível; alta = criativo. Ajustar para cada caso.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Temperature 0-1, top_p, nucleus sampling, determinismo vs criatividade.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🐛 Debugando Prompts: Quando Algo Dá Errado
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Técnicas para identificar por que um prompt falhou e como corrigi-lo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Todo prompt ruim é uma oportunidade de aprendizado.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Análise de falhas, ambiguidade, instruções conflitantes, falta de contexto.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📝 Documentando Descobertas
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Manter registro do que funcionou, do que falhou e das lições aprendidas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Conhecimento acumulado acelera experimentos futuros.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Prompt journal, biblioteca pessoal, templates validados, knowledge base.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎲 Abraçando o Inesperado
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Às vezes resultados "errados" revelam possibilidades surpreendentes e criativas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Serendipidade pode levar a inovações inesperadas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Happy accidents, pivots criativos, exploração vs exploração.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🤝 Colaboração e Feedback
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Compartilhar prompts com outros, pedir feedback, aprender com a comunidade.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Perspectivas externas aceleram o aprendizado.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Comunidades de prompt, code review de prompts, mentoria.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🏋️ Exercícios de Experimentação
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Desafios práticos para exercitar a mentalidade experimental.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Prática deliberada constrói intuição de prompt engineering.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> 10 variações, objetivo impossível, limitações criativas.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(6)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-6.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 0.7 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.7
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Além do Texto: IA Multimodal</h2>
+              <p class="text-sm text-neutral-400">Geração de imagens, áudio, vídeo e código com IA</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🌐 O Mundo Multimodal da IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> IA que processa e gera múltiplos tipos de mídia: texto, imagem, áudio, vídeo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> O futuro é multimodal - integrar diferentes formatos em um só fluxo.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Text-to-image, image-to-text, text-to-audio, audio-to-text.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎨 Geração de Imagens: Fundamentos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Como modelos transformam descrições textuais em imagens. Difusão e transformers.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Entender o processo ajuda a criar prompts visuais mais eficazes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Diffusion models, latent space, CLIP, embeddings visuais.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ✍️ Prompts para Imagens: Técnicas Essenciais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Estrutura de prompts visuais: sujeito, estilo, iluminação, composição, mood.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Prompts de imagem têm gramática própria diferente de texto.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Descrição detalhada, referências artísticas, aspect ratio, qualidade.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🖼️ Midjourney, DALL-E e Stable Diffusion
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Comparativo das principais ferramentas: forças, fraquezas, casos de uso.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Escolher a ferramenta certa para cada tipo de projeto visual.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Estética MJ, precisão DALL-E, flexibilidade SD, custos, APIs.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎵 Geração de Áudio e Música
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Text-to-speech, voice cloning, geração de música com IA.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Produção de áudio agora acessível a qualquer criador.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> ElevenLabs, Suno, Udio, voice cloning, instrumentação.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎬 Geração e Edição de Vídeo
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Text-to-video, image-to-video, edição automatizada com IA.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Vídeo é o formato mais consumido e agora é gerável por IA.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Runway, Pika, Kling, Sora, consistência temporal, motion.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              💻 Geração de Código com IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Assistentes de programação que escrevem, explicam e debugam código.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Programar com IA é 10x mais rápido para muitas tarefas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Copilot, Cursor, Claude Code, autocomplete, refatoração.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔗 Workflows Multimodais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Combinar múltiplas ferramentas em pipelines criativos integrados.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> O poder real está na combinação de modalidades.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Texto → imagem → vídeo, automação, n8n, Make.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ⚠️ Limitações e Desafios
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Entender o que ainda não funciona bem: mãos, texto em imagens, física.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Expectativas realistas evitam frustração.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Artefatos, inconsistências, workarounds, pós-produção.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔮 O Futuro Multimodal
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Tendências: modelos unificados, interatividade, realismo crescente.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Preparar-se para as próximas ondas de inovação.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Omnimodal, world models, simulação, embodied AI.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(7)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-7.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 0.8 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.8
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Ética e Responsabilidade</h2>
+              <p class="text-sm text-neutral-400">Uso responsável da IA: viés, privacidade e impacto social</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ⚖️ Por Que Ética Importa na IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Com grande poder vem grande responsabilidade. IA amplifica tanto o bem quanto o mal.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Uso ético é fundamental para confiança e sustentabilidade.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Impacto social, responsabilidade do criador, consequências não-intencionais.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎭 Viés Algorítmico
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> IA herda vieses dos dados de treinamento - estereótipos, preconceitos, exclusões.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Reconhecer vieses é o primeiro passo para mitigá-los.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Bias de dados, representação, fairness, debiasing, auditorias.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔒 Privacidade e Dados Pessoais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Cuidados com dados sensíveis em prompts, LGPD, GDPR, consentimento.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Proteger informações pessoais é obrigação legal e moral.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> PII, anonimização, data retention, políticas de uso.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📜 Propriedade Intelectual e Copyright
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Quem é dono do conteúdo gerado por IA? Questões de autoria e direitos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Navegar terreno legal ainda em definição.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Copyright, fair use, treinamento em dados protegidos, licenças.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎭 Deepfakes e Desinformação
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Uso malicioso de IA para criar conteúdo falso: vídeos, áudios, textos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Reconhecer e combater desinformação gerada por IA.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Deepfakes, synthetic media, detecção, watermarking, proveniência.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔍 Transparência e Explicabilidade
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Ser claro quando conteúdo é gerado por IA, explicar como funciona.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Transparência constrói confiança e permite escrutínio.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Disclosure, XAI, caixa preta vs caixa branca, accountability.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🌍 Impacto Ambiental
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Consumo energético de data centers, pegada de carbono do treinamento.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Considerar sustentabilidade nas decisões de uso de IA.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Carbon footprint, eficiência energética, modelos menores, green AI.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📋 Frameworks Éticos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Princípios e guidelines para uso responsável: beneficência, não-maleficência, autonomia.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Frameworks ajudam a tomar decisões éticas consistentes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> AI Ethics Guidelines, IEEE, OECD, princípios de design.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🛡️ Boas Práticas Pessoais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Checklist pessoal para uso ético: verificar fontes, citar IA, proteger dados.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Cada usuário é responsável pelo seu uso de IA.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Fact-checking, disclosure, consent, boundaries pessoais.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🤔 Dilemas Éticos: Estudos de Caso
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Análise de casos reais: decisões difíceis, trade-offs, consequências.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Praticar raciocínio ético em cenários concretos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Casos emblemáticos, análise de consequências, tomada de decisão.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(8)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-8.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 0.9 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.9
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Como Aprender a Aprender</h2>
+              <p class="text-sm text-neutral-400">Habilidades do futuro e aprendizado contínuo na era da IA</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🧠 A Metahabilidade do Século XXI
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Aprender a aprender é a habilidade mais valiosa em um mundo em mudança constante.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Ferramentas mudam, princípios permanecem - adaptabilidade é chave.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Learnability, growth mindset, metacognição, lifelong learning.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📚 IA Como Tutor Personalizado
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Usar IA para aprender qualquer assunto: explicações, exercícios, feedback.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Tutor disponível 24/7, adaptado ao seu ritmo e estilo.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Socratic method, explanations simplificadas, quizzes, feedback loops.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎯 Definindo Metas de Aprendizado
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Clareza sobre o que aprender, por que e como medir progresso.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Metas claras direcionam esforço e aumentam motivação.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> SMART goals, roadmaps de aprendizado, milestones, retrospectivas.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔄 Ciclos de Aprendizado Ativo
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Aprender fazendo: teoria mínima, prática máxima, reflexão constante.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Retenção é 10x maior com prática ativa vs leitura passiva.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Learning by doing, retrieval practice, spaced repetition, projects.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🌊 Navegando a Sobrecarga de Informação
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Filtrar o essencial, evitar rabbit holes, focar no que importa.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Mais informação não significa mais conhecimento - curadoria é essencial.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Information diet, curadoria, just-in-time learning, FOMO.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🤝 Comunidades de Aprendizado
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Aprender com outros: comunidades, mentores, pares, ensinar para aprender.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Aprendizado social acelera e aprofunda conhecimento.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Discord, Twitter, meetups, mentoria, peer learning, Feynman technique.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📝 Documentando o Aprendizado
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Manter notas, blog, portfolio - externalizar conhecimento para consolidar.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Escrever força clareza de pensamento e cria recurso futuro.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Digital garden, Zettelkasten, blog, portfolio, second brain.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ⚡ Habilidades do Futuro
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> O que será valorizado: pensamento crítico, criatividade, EQ, colaboração humano-IA.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Investir no que IA não pode facilmente replicar.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Soft skills, human skills, judgment, empathy, creativity.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🏃 Mantendo o Momentum
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Hábitos e rotinas para aprendizado consistente a longo prazo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Consistência supera intensidade - pequenos passos diários.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Atomic habits, streaks, accountability, sistemas vs metas.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🗺️ Seu Plano de Aprendizado Pessoal
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Criar seu próprio roadmap personalizado de aprendizado em IA.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Plano pessoal é mais efetivo que seguir currículos genéricos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Assessment de skills, gaps, priorização, timeline, revisão.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(9)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-9.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 0.10 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.10
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Projeto Final Integrado</h2>
+              <p class="text-sm text-neutral-400">Aplicação prática de todos os conceitos aprendidos</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎯 Visão Geral do Projeto
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Criar um sistema de prompts personalizado para um problema real do seu contexto.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Consolidar todo o aprendizado em uma aplicação prática e pessoal.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Projeto integrado, aplicação real, portfolio, demonstração de competência.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔍 Identificando Seu Problema
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Escolher um desafio real do seu trabalho, hobby ou vida pessoal.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Problemas reais geram motivação e aprendizado mais profundo.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Problem statement, escopo, impacto, viabilidade com IA.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🗺️ Planejando a Solução
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Mapear como IA pode ajudar: quais ferramentas, quais prompts, qual workflow.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Planejamento evita desperdício de tempo e recursos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Solution design, ferramentas necessárias, sequência de prompts.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ✍️ Desenvolvendo os Prompts
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Criar os prompts usando todas as técnicas aprendidas: persona, contexto, exemplos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Aplicar teoria na prática, iterando até encontrar a fórmula ideal.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Prompt engineering aplicado, iteração, refinamento.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🧪 Testando e Iterando
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Testar prompts em diferentes cenários, identificar falhas, refinar.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Testes revelam edge cases e oportunidades de melhoria.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Testing, edge cases, failure modes, robustez.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📊 Medindo Resultados
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Definir e medir métricas de sucesso: tempo economizado, qualidade, satisfação.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Sem métricas, não há como provar valor ou melhorar.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> KPIs, before/after, ROI, qualitative feedback.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📝 Documentando o Projeto
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Criar documentação: problema, solução, prompts, resultados, lições.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Documentação é portfolio e recurso para uso futuro.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Case study, portfolio piece, knowledge sharing.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎤 Apresentando Seu Trabalho
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Comunicar o projeto de forma clara e persuasiva para diferentes audiências.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Saber apresentar é tão importante quanto saber fazer.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Storytelling, demo, pitch, adaptação de audiência.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔄 Feedback e Melhoria Contínua
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Coletar feedback, identificar melhorias, planejar próximas versões.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Todo projeto é v1.0 - a excelência vem da iteração.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Feedback loops, retrospectiva, roadmap de melhorias.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🚀 Próximos Passos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Planejar a continuação da jornada: qual trilha seguir, que habilidades desenvolver.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> A Trilha 0 é apenas o começo - as trilhas especializadas aguardam.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Trilha de Arte, Engenharia ou Consultoria, especialização, carreira.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(10)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-10.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="flex justify-between items-center mt-12 pt-8 border-t border-dark-600">
+      <a href="trilha01.html" class="flex items-center space-x-2 text-neutral-400 hover:text-yellow-400 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Parte 1: Módulos 1-5</span>
+      </a>
+      <a href="../trilha1/trilha11.html" class="flex items-center space-x-2 px-6 py-3 bg-emerald-500 text-dark-900 rounded-xl font-bold hover:bg-emerald-400 transition-colors">
+        <span>Trilha 1: Arte</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="flex items-center justify-center space-x-2 mb-4">
+        <span class="text-2xl">🧠</span>
+        <span class="font-bold text-lg text-yellow-400">SHIA</span>
+      </div>
+      <p class="text-neutral-500 text-sm mb-2">Super Humanos Inteligência Aumentada</p>
+      <p class="text-neutral-600 text-xs">© 2025 SHIA. IA não pensa por você. IA AMPLIFICA quem você é.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="module-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+      <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+      <div class="relative bg-dark-800 rounded-2xl border border-dark-600 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all">
+        <div class="sticky top-0 bg-dark-800 border-b border-dark-600 px-6 py-4 flex justify-between items-center z-10">
+          <h2 id="modal-title" class="text-xl font-bold text-yellow-400"></h2>
+          <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors">
+            <svg class="w-6 h-6 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modal-content" class="p-6"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Module URLs - carrega conteúdo completo das páginas dos módulos
+    const moduleUrls = {
+      6: 'modulo-0-6.html',
+      7: 'modulo-0-7.html',
+      8: 'modulo-0-8.html',
+      9: 'modulo-0-9.html',
+      10: 'modulo-0-10.html'
+    };
+
+    // Open Modal - carrega conteúdo da página do módulo
+    async function openModal(moduleNum) {
+      const modal = document.getElementById('module-modal');
+      const title = document.getElementById('modal-title');
+      const content = document.getElementById('modal-content');
+
+      // Mostra loading
+      title.textContent = 'Carregando...';
+      content.innerHTML = '<div class="text-center py-8"><div class="animate-spin w-8 h-8 border-2 border-yellow-400 border-t-transparent rounded-full mx-auto"></div></div>';
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      try {
+        const response = await fetch(moduleUrls[moduleNum]);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        // Pega o título do módulo
+        const moduleTitle = doc.querySelector('h1');
+        title.textContent = moduleTitle ? moduleTitle.textContent : `Módulo 0.${moduleNum}`;
+
+        // Pega o conteúdo principal (seção de tópicos)
+        const mainContent = doc.querySelector('main');
+        if (mainContent) {
+          // Remove navegação e elementos desnecessários
+          const clone = mainContent.cloneNode(true);
+          clone.querySelectorAll('nav, .navigation-buttons, footer').forEach(el => el.remove());
+
+          // Remove o header duplicado (já temos no modal)
+          const header = clone.querySelector('.text-center.mb-8, .text-center.mb-12');
+          if (header) header.remove();
+
+          content.innerHTML = '';
+          content.appendChild(clone);
+        }
+      } catch (error) {
+        content.innerHTML = '<p class="text-red-400 text-center py-8">Erro ao carregar conteúdo. <a href="' + moduleUrls[moduleNum] + '" class="underline">Clique aqui para abrir a página completa.</a></p>';
+      }
+    }
+
+    // Close Modal
+    function closeModal() {
+      const modal = document.getElementById('module-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Toggle Topic
+    function toggleTopic(button) {
+      const explanation = button.nextElementSibling;
+      const arrow = button.querySelector('span:first-child');
+
+      if (explanation.classList.contains('hidden')) {
+        explanation.classList.remove('hidden');
+        arrow.textContent = '▾';
+      } else {
+        explanation.classList.add('hidden');
+        arrow.textContent = '▸';
+      }
+    }
+
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

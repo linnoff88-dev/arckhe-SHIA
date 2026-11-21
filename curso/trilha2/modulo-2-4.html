@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2.4: Automação de Processos e Fluxos de Trabalho com IA | SHIA</title>
+  <meta name="description" content="Automatize tarefas repetitivas, crie workflows inteligentes e libere tempo para o que realmente importa.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            dark: {
+              900: '#111827',
+              800: '#1f2937',
+              700: '#374151',
+              600: '#4b5563'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+
+    /* Tópicos sempre visíveis */
+    .topic-content { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo + INEMA.CLUB -->
+        <div class="flex items-center space-x-3">
+          <a href="../../index.html" class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">SHIA</span>
+          </a>
+          <span class="text-neutral-500 hidden sm:inline">|</span>
+          <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+            INEMA.CLUB
+          </a>
+        </div>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha0/trilha01.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-yellow-400 hover:bg-yellow-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>0
+          </a>
+          <a href="../trilha1/trilha11.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="trilha21.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/trilha31.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header do Módulo -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 2.4 - TRILHA 2
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">🔄 Automação de Processos e Fluxos de Trabalho com IA</h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Automatize tarefas repetitivas, crie workflows inteligentes e libere tempo para o que realmente importa.
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">10</div>
+        <div class="text-xs text-neutral-400">Tópicos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">~3h</div>
+        <div class="text-xs text-neutral-400">Duração</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-blue-400">Avançado</div>
+        <div class="text-xs text-neutral-400">Nível</div>
+      </div>
+    </div>
+
+    <!-- Conceito Central -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl p-8 border border-blue-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💡</span>
+          <div>
+            <h2 class="text-2xl font-bold text-blue-400">Conceito Central</h2>
+            <p class="text-neutral-400">A ideia que vai transformar sua visão sobre automação</p>
+          </div>
+        </div>
+
+        <blockquote class="text-xl text-neutral-200 italic border-l-4 border-blue-500 pl-6 mb-6">
+          "Automação com IA não é RPA tradicional - é automação <strong class="text-blue-400">INTELIGENTE</strong> que aprende e adapta."
+        </blockquote>
+
+        <p class="text-neutral-300 mb-4">
+          A <strong>Automação Inteligente de Processos (IPA - Intelligent Process Automation)</strong> representa uma evolução fundamental da automação tradicional baseada em regras (RPA). Enquanto o RPA apenas replica ações humanas de forma rígida, a IPA incorpora capacidades cognitivas de IA para <strong>compreender contexto, tomar decisões e adaptar-se a situações novas</strong>.
+        </p>
+
+        <p class="text-neutral-300">
+          Com IA generativa, não estamos mais limitados a fluxos pré-programados. Podemos criar sistemas que <strong>interpretam dados não estruturados, geram conteúdo, respondem a contextos complexos e melhoram continuamente</strong>. Esta é a verdadeira revolução da automação: torná-la cognitiva.
+        </p>
+      </div>
+    </section>
+
+    <!-- Imagem do Conceito -->
+    <section class="mb-12">
+      <img src="../../doc/imagens/engenharia/automacao_fluxos.webp"
+           alt="Automação de Processos e Fluxos de Trabalho com IA"
+           class="w-full rounded-2xl shadow-lg border border-dark-600 mb-4">
+      <p class="text-center text-neutral-500 text-sm">Da automação rígida (RPA) à automação inteligente (IPA) com IA</p>
+    </section>
+
+    <!-- Comparação RPA vs IPA -->
+    <section class="mb-12">
+      <div class="bg-dark-800 rounded-2xl p-8 border border-dark-600">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">⚖️</span>
+          <div>
+            <h2 class="text-2xl font-bold">RPA Tradicional vs IPA com IA</h2>
+            <p class="text-neutral-400">Entenda a evolução da automação</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- RPA Tradicional -->
+          <div class="bg-red-900/20 p-6 rounded-xl border border-red-500/30">
+            <h4 class="font-bold text-red-400 mb-4">🤖 RPA Tradicional (Regras)</h4>
+            <ul class="space-y-3 text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">•</span>
+                <span><strong>Lógica:</strong> If-then fixo e rígido</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">•</span>
+                <span><strong>Dados:</strong> Apenas estruturados</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">•</span>
+                <span><strong>Adaptação:</strong> Quebra em exceções</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-400 mr-2">•</span>
+                <span><strong>Exemplo:</strong> Copiar dados entre planilhas</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- IPA com IA -->
+          <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
+            <h4 class="font-bold text-emerald-400 mb-4">🧠 IPA com IA (Inteligência)</h4>
+            <ul class="space-y-3 text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span><strong>Lógica:</strong> Compreensão contextual e adaptável</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span><strong>Dados:</strong> Estruturados e não estruturados</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span><strong>Adaptação:</strong> Aprende com variações</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-400 mr-2">✓</span>
+                <span><strong>Exemplo:</strong> Analisar e-mails, extrair intenção, gerar resposta personalizada</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tópicos do Módulo -->
+    <section class="mb-12">
+      <div class="flex items-center mb-6">
+        <span class="text-3xl mr-3">📚</span>
+        <h2 class="text-2xl font-bold">Tópicos do Módulo</h2>
+      </div>
+
+      <div class="space-y-3">
+
+        <!-- Tópico 1 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">1</span>
+            <span class="font-semibold">🔄 Introdução à Automação com IA</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  A <strong class="text-blue-400">automação evoluiu</strong>: de scripts simples (batch processing) para RPA (Robotic Process Automation) e agora para <strong>IPA (Intelligent Process Automation)</strong>. A IA generativa está transformando a automação ao adicionar capacidades cognitivas: compreensão de linguagem natural, interpretação de contexto, geração de conteúdo e tomada de decisão baseada em padrões complexos.
+                </p>
+                <p class="text-neutral-300">
+                  Não estamos mais limitados a automatizar apenas tarefas repetitivas e previsíveis. Agora podemos automatizar <strong>processos cognitivos</strong>: análise de documentos, triagem de e-mails, geração de relatórios personalizados, suporte ao cliente contextual e muito mais.
+                </p>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30 mb-4">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Exemplo Real</h5>
+                <p class="text-sm text-neutral-300">
+                  Uma empresa recebe centenas de e-mails de clientes diariamente. IPA com IA: classifica automaticamente por categoria (dúvida, reclamação, elogio), extrai informações-chave, gera respostas contextuais para casos simples, escala casos complexos para humanos com resumo e sugestões de ação.
+                </p>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                <h5 class="font-bold text-yellow-400 mb-2">🎯 Ponto-Chave</h5>
+                <p class="text-neutral-300 text-sm">
+                  RPA automatiza AÇÕES. IPA automatiza PENSAMENTO + AÇÕES.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 2 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">2</span>
+            <span class="font-semibold">🎯 Identificando Oportunidades de Automação</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Nem tudo deve ser automatizado. O segredo é <strong>analisar seus fluxos existentes</strong> para identificar candidatos ideais. Procure por: <strong>tarefas repetitivas, alto volume, consumo excessivo de tempo, propensas a erro humano, gargalos de processo</strong>.
+                </p>
+                <p class="text-neutral-300">
+                  Use técnicas como <strong>BPMN (Business Process Model and Notation)</strong> para mapear fluxos atuais, identificar etapas manuais e avaliar o custo-benefício da automação. Pergunte-se: "Se eu automatizar isso, qual será o ROI em tempo, precisão e satisfação?"
+                </p>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30 mb-4">
+                <h5 class="font-bold text-emerald-400 mb-2">✓ Critérios para Boa Automação</h5>
+                <ul class="text-neutral-300 text-sm space-y-1">
+                  <li>• <strong>Alto volume:</strong> Tarefa executada muitas vezes (diária/semanal)</li>
+                  <li>• <strong>Regras claras:</strong> Mesmo com IA, ter lógica identificável ajuda</li>
+                  <li>• <strong>Entrada digital:</strong> Dados já estão em formato processável</li>
+                  <li>• <strong>Impacto mensurável:</strong> Ganho de tempo/qualidade é quantificável</li>
+                </ul>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Exemplo de Análise</h5>
+                <p class="text-neutral-300 text-sm">
+                  Fluxo atual: Recebimento de nota fiscal (e-mail) → Download manual → Extração de dados → Inserção em planilha → Validação → Aprovação. <strong>Oportunidade:</strong> Automatizar extração de dados (OCR + IA) e validação (regras + ML).
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 3 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">3</span>
+            <span class="font-semibold">🛠️ Ferramentas e Plataformas de Automação</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  O ecossistema de automação cresceu exponencialmente. Temos plataformas <strong>low-code/no-code</strong> (Zapier, Make, n8n) para usuários não-técnicos e ferramentas para desenvolvedores (Python + APIs de LLMs, Langchain, AutoGen).
+                </p>
+                <p class="text-neutral-300">
+                  A escolha depende do nível técnico, complexidade do fluxo, orçamento e necessidade de customização. Low-code é ideal para MVPs e fluxos simples. Código customizado oferece flexibilidade total para processos complexos.
+                </p>
+              </div>
+
+              <div class="overflow-x-auto mb-4">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="border-b border-dark-600">
+                      <th class="text-left py-3 px-4 text-blue-400">Ferramenta</th>
+                      <th class="text-left py-3 px-4 text-neutral-400">Tipo</th>
+                      <th class="text-left py-3 px-4 text-neutral-400">Melhor Para</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-neutral-300">
+                    <tr class="border-b border-dark-700">
+                      <td class="py-3 px-4 font-semibold">Zapier</td>
+                      <td class="py-3 px-4">No-code</td>
+                      <td class="py-3 px-4">Integrações rápidas entre apps SaaS</td>
+                    </tr>
+                    <tr class="border-b border-dark-700">
+                      <td class="py-3 px-4 font-semibold">Make (Integromat)</td>
+                      <td class="py-3 px-4">Low-code</td>
+                      <td class="py-3 px-4">Fluxos visuais complexos com lógica condicional</td>
+                    </tr>
+                    <tr class="border-b border-dark-700">
+                      <td class="py-3 px-4 font-semibold">n8n</td>
+                      <td class="py-3 px-4">Low-code (self-hosted)</td>
+                      <td class="py-3 px-4">Controle total de dados, código aberto</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-4 font-semibold">Python + APIs</td>
+                      <td class="py-3 px-4">Code</td>
+                      <td class="py-3 px-4">Automação altamente customizada e escalável</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                <h5 class="font-bold text-yellow-400 mb-2">🎯 Dica</h5>
+                <p class="text-neutral-300 text-sm">
+                  Comece com low-code para validar a ideia rapidamente. Se o processo escalar ou precisar de customização profunda, migre para código customizado.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 4 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">4</span>
+            <span class="font-semibold">💻 Automação com Scripts e APIs de IA</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Para tarefas complexas ou em escala, <strong>scripts customizados</strong> (Python, JavaScript) são essenciais. Integre diretamente com <strong>APIs de LLMs</strong> (OpenAI, Anthropic, Google AI) para adicionar capacidades cognitivas aos seus fluxos.
+                </p>
+                <p class="text-neutral-300">
+                  Casos de uso comuns: <strong>classificação de conteúdo</strong> (emails, tickets), <strong>extração de informações</strong> de textos não estruturados, <strong>geração de conteúdo</strong> personalizado em escala, <strong>tradução e sumarização</strong> automatizadas.
+                </p>
+              </div>
+
+              <div class="bg-dark-900/50 p-4 rounded-lg mb-4">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Exemplo de Código Python</h5>
+                <pre class="text-sm text-neutral-300 overflow-x-auto"><code># Classificação automatizada de emails com IA
+import openai
+
+def classify_email(email_text):
+    response = openai.chat.completions.create(
+        model="gpt-4",
+        messages=[{
+            "role": "system",
+            "content": "Classifique emails em: DÚVIDA, RECLAMAÇÃO, ELOGIO, URGENTE"
+        }, {
+            "role": "user",
+            "content": email_text
+        }]
+    )
+    return response.choices[0].message.content
+
+# Processar inbox automaticamente
+for email in inbox:
+    category = classify_email(email.body)
+    email.tag(category)
+    if category == "URGENTE":
+        notify_team(email)</code></pre>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                <h5 class="font-bold text-yellow-400 mb-2">🎯 Ponto-Chave</h5>
+                <p class="text-neutral-300 text-sm">
+                  APIs de IA transformam automação de "se-então" para "entenda-e-aja". Você ganha flexibilidade para lidar com variações e nuances.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 5 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">5</span>
+            <span class="font-semibold">⚙️ Criando Fluxos de Trabalho Inteligentes</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Um workflow inteligente combina <strong>gatilhos</strong> (evento inicial), <strong>ações</strong> (etapas do processo) e <strong>lógica condicional</strong> (decisões baseadas em dados). Com IA, a lógica pode ser semântica, não apenas baseada em regras rígidas.
+                </p>
+                <p class="text-neutral-300">
+                  Exemplo de fluxo: <strong>Gatilho:</strong> Novo e-mail de cliente → <strong>Ação 1:</strong> Extrai intenção com IA → <strong>Decisão:</strong> Se dúvida simples, gera resposta automática; se complexa, cria ticket com resumo e prioridade → <strong>Ação 2:</strong> Notifica equipe se alta prioridade.
+                </p>
+              </div>
+
+              <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30 mb-4">
+                <h5 class="font-bold text-purple-400 mb-2">🔗 Anatomia de um Workflow</h5>
+                <ol class="text-neutral-300 text-sm space-y-2">
+                  <li><strong>1. Gatilho:</strong> Evento que inicia o fluxo (webhook, scheduler, ação do usuário)</li>
+                  <li><strong>2. Preparação:</strong> Coleta e normalização de dados</li>
+                  <li><strong>3. Processamento IA:</strong> Análise, classificação, extração ou geração</li>
+                  <li><strong>4. Decisão:</strong> Roteamento baseado no output da IA</li>
+                  <li><strong>5. Ação:</strong> Executar tarefa final (salvar, notificar, gerar documento)</li>
+                  <li><strong>6. Log:</strong> Registrar resultado para auditoria e melhoria</li>
+                </ol>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Exemplo Prático</h5>
+                <p class="text-neutral-300 text-sm">
+                  Fluxo de onboarding: Novo cliente preenche formulário → IA extrai informações e sugere plano ideal → Sistema cria conta, envia credenciais e agenda call de boas-vindas → IA gera e-mail personalizado com dicas baseadas no perfil do cliente.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 6 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">6</span>
+            <span class="font-semibold">📊 Processamento e Análise Automatizada de Dados</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  A IA torna possível automatizar o ciclo completo de dados: <strong>coleta, limpeza, transformação, análise e geração de insights</strong>. Isso é especialmente poderoso para dados não estruturados (PDFs, e-mails, imagens, áudio).
+                </p>
+                <p class="text-neutral-300">
+                  Exemplos: extração automática de dados de notas fiscais (OCR + IA), análise de sentimento em reviews de produtos, sumarização de relatórios extensos, identificação de padrões em logs de sistemas.
+                </p>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                  <h5 class="font-bold text-blue-400 mb-2">📄 Dados Estruturados</h5>
+                  <p class="text-neutral-300 text-sm">CSV, JSON, Bancos de dados. IA pode identificar anomalias, prever tendências e automatizar relatórios.</p>
+                </div>
+                <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+                  <h5 class="font-bold text-purple-400 mb-2">📝 Dados Não Estruturados</h5>
+                  <p class="text-neutral-300 text-sm">PDFs, e-mails, imagens. IA extrai informações-chave, classifica conteúdo e gera resumos estruturados.</p>
+                </div>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                <h5 class="font-bold text-emerald-400 mb-2">✓ Caso de Uso</h5>
+                <p class="text-neutral-300 text-sm">
+                  Empresa recebe 500 PDFs de contratos mensalmente. Automação: OCR extrai texto → IA identifica cláusulas-chave (prazo, valor, penalidades) → Salva em banco de dados estruturado → Gera alerta para contratos próximos do vencimento.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 7 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">7</span>
+            <span class="font-semibold">💬 Chatbots e Assistentes Virtuais Automatizados</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Chatbots com IA generativa oferecem <strong>atendimento 24/7, suporte instantâneo e escalabilidade</strong> sem comprometer a qualidade. Diferente de bots baseados em árvore de decisão, eles <strong>entendem intenção, mantêm contexto e geram respostas naturais</strong>.
+                </p>
+                <p class="text-neutral-300">
+                  Funcionalidades-chave: entender variações de linguagem, acessar base de conhecimento (RAG), escalar para humano quando necessário, aprender com interações (feedback loop).
+                </p>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30 mb-4">
+                <h5 class="font-bold text-yellow-400 mb-2">🎯 Elementos de um Bom Chatbot</h5>
+                <ul class="text-neutral-300 text-sm space-y-1">
+                  <li>• <strong>Compreensão de intenção:</strong> Entender o que o usuário realmente quer</li>
+                  <li>• <strong>Contexto persistente:</strong> Lembrar da conversa anterior</li>
+                  <li>• <strong>Acesso a dados:</strong> Consultar sistemas internos (pedidos, estoque, etc.)</li>
+                  <li>• <strong>Escalabilidade humana:</strong> Transferir para agente quando necessário</li>
+                  <li>• <strong>Tom apropriado:</strong> Adaptar linguagem ao contexto (formal/casual)</li>
+                </ul>
+              </div>
+
+              <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                <h5 class="font-bold text-blue-400 mb-2">💡 Exemplo</h5>
+                <p class="text-neutral-300 text-sm">
+                  Cliente: "Onde está meu pedido #12345?" → Bot consulta API de logística → Bot: "Seu pedido está em trânsito, previsão de entrega para amanhã às 14h. Deseja rastreamento em tempo real?" → Cliente: "Sim" → Bot envia link de rastreamento.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 8 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">8</span>
+            <span class="font-semibold">✍️ Geração de Conteúdo Automatizada em Escala</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  IA generativa permite <strong>criar conteúdo em escala</strong> mantendo qualidade e personalização: e-mails de marketing, posts para redes sociais, descrições de produtos, relatórios executivos, artigos de blog.
+                </p>
+                <p class="text-neutral-300">
+                  O segredo está em <strong>templates inteligentes + dados dinâmicos + revisão humana</strong>. A IA gera o conteúdo base, você ajusta o tom e adiciona o toque humano final.
+                </p>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+                  <h5 class="font-bold text-purple-400 mb-2">📧 E-mails Personalizados</h5>
+                  <p class="text-neutral-300 text-sm">Gerar 1000 e-mails únicos para clientes com recomendações baseadas em histórico de compras.</p>
+                </div>
+                <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+                  <h5 class="font-bold text-emerald-400 mb-2">🛍️ Descrições de Produtos</h5>
+                  <p class="text-neutral-300 text-sm">Criar descrições SEO-otimizadas para catálogo de 10.000 produtos em minutos.</p>
+                </div>
+                <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                  <h5 class="font-bold text-blue-400 mb-2">📊 Relatórios Executivos</h5>
+                  <p class="text-neutral-300 text-sm">Transformar dados brutos em narrativas claras com insights e recomendações.</p>
+                </div>
+                <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                  <h5 class="font-bold text-yellow-400 mb-2">📱 Posts Sociais</h5>
+                  <p class="text-neutral-300 text-sm">Gerar variações de conteúdo adaptadas para cada plataforma (LinkedIn, Twitter, Instagram).</p>
+                </div>
+              </div>
+
+              <div class="bg-red-900/20 p-4 rounded-lg border border-red-500/30">
+                <h5 class="font-bold text-red-400 mb-2">⚠️ Cuidado</h5>
+                <p class="text-neutral-300 text-sm">
+                  Conteúdo gerado em massa sem revisão pode soar genérico ou conter erros. Sempre revise outputs críticos e ajuste para manter autenticidade.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 9 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">9</span>
+            <span class="font-semibold">📈 Implementação, Monitoramento e Otimização</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+                <p class="text-neutral-300 mb-3">
+                  Implementar automação é apenas o começo. O verdadeiro valor vem do <strong>monitoramento contínuo e otimização</strong>. Configure <strong>logs detalhados, dashboards de performance e KPIs claros</strong>.
+                </p>
+                <p class="text-neutral-300">
+                  Métricas importantes: taxa de sucesso, tempo economizado, erros/exceções, satisfação do usuário (quando aplicável), custo (API calls, infraestrutura).
+                </p>
+              </div>
+
+              <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30 mb-4">
+                <h5 class="font-bold text-purple-400 mb-2">📊 KPIs para Automação</h5>
+                <ul class="text-neutral-300 text-sm space-y-1">
+                  <li>• <strong>Taxa de sucesso:</strong> % de execuções bem-sucedidas</li>
+                  <li>• <strong>Tempo médio de execução:</strong> Velocidade do workflow</li>
+                  <li>• <strong>Volume processado:</strong> Quantas tarefas foram automatizadas</li>
+                  <li>• <strong>Economia de tempo:</strong> Horas humanas economizadas</li>
+                  <li>• <strong>ROI:</strong> Custo da automação vs. benefício gerado</li>
+                </ul>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                <h5 class="font-bold text-yellow-400 mb-2">🎯 Ciclo de Melhoria</h5>
+                <p class="text-neutral-300 text-sm">
+                  Implementar → Monitorar → Identificar gargalos → Otimizar (ajustar prompts, melhorar lógica, adicionar validações) → Repetir. A automação evolui continuamente.
+                </p>
+          </div>
+        </div>
+
+        <!-- Tópico 10 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">10</span>
+            <span class="font-semibold">🔮 O Futuro da Automação: Agentes Autônomos</span>
+          </div>
+          <div class="p-5">
+              <div class="bg-gradient-to-br from-blue-900/20 to-dark-700/50 p-4 rounded-lg border border-blue-500/30 mb-4">
+                <h5 class="font-bold text-blue-400 mb-3">🚀 O Próximo Nível</h5>
+                <p class="text-neutral-300 mb-3">
+                  O futuro da automação são <strong>agentes autônomos</strong>: sistemas de IA que não apenas executam fluxos pré-definidos, mas <strong>planejam, tomam decisões e executam tarefas complexas de forma independente</strong>.
+                </p>
+                <p class="text-neutral-300">
+                  Imagine um assistente que monitora seus e-mails, identifica oportunidades de negócio, faz pesquisas de mercado, prepara propostas e agenda reuniões — tudo automaticamente, apenas reportando para você aprovar.
+                </p>
+              </div>
+
+              <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30 mb-4">
+                <h5 class="font-bold text-purple-400 mb-2">🤖 Características de Agentes Autônomos</h5>
+                <ul class="text-neutral-300 text-sm space-y-2">
+                  <li>• <strong>Planejamento:</strong> Define estratégia para atingir objetivo</li>
+                  <li>• <strong>Tool use:</strong> Acessa múltiplas ferramentas e APIs</li>
+                  <li>• <strong>Memória de longo prazo:</strong> Aprende com interações anteriores</li>
+                  <li>• <strong>Auto-correção:</strong> Identifica e corrige erros</li>
+                  <li>• <strong>Multi-step reasoning:</strong> Resolve problemas complexos em etapas</li>
+                </ul>
+              </div>
+
+              <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30 mb-4">
+                <h5 class="font-bold text-emerald-400 mb-2">💼 Impacto no Trabalho</h5>
+                <p class="text-neutral-300 text-sm">
+                  Profissionais não serão substituídos, mas <strong>amplificados</strong>. Tarefas operacionais serão automatizadas, liberando humanos para estratégia, criatividade e relacionamentos. A pergunta não é "meu emprego será automatizado?", mas "como posso usar automação para 10x meu impacto?".
+                </p>
+              </div>
+
+              <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+                <h5 class="font-bold text-yellow-400 mb-2">🎯 Prepare-se Agora</h5>
+                <p class="text-neutral-300 text-sm">
+                  Comece pequeno: automatize uma tarefa repetitiva hoje. Aprenda a trabalhar com IA. Desenvolva a mentalidade de "orquestrador de sistemas" em vez de "executor de tarefas". O futuro pertence a quem sabe comandar a automação.
+                </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-primary/10 rounded-2xl p-8 border border-primary/30">
+        <h2 class="text-2xl font-bold text-primary mb-6 text-center">✅ Resumo do Módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">IPA (IA) > RPA (regras): automação inteligente</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Identifique processos repetitivos para automatizar</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Low-code para MVPs, código para customização</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">APIs de IA adicionam cognição aos fluxos</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Workflows inteligentes = gatilhos + IA + ações</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Automatize análise de dados estruturados e não estruturados</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Chatbots com contexto oferecem suporte 24/7</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Gere conteúdo em escala com personalização</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Monitore KPIs e otimize continuamente</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Futuro: agentes autônomos que planejam e executam</span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="trilha21.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-white rounded-lg font-bold hover:bg-primary/90 transition-colors">
+            <span>Voltar para Trilha 2</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegação -->
+    <div class="flex justify-between items-center">
+      <a href="modulo-2-3.html" class="inline-flex items-center space-x-2 text-neutral-400 hover:text-blue-400 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Anterior: Módulo 2.3</span>
+      </a>
+      <a href="modulo-2-5.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-blue-500 text-white rounded-lg font-bold hover:bg-blue-400 transition-colors">
+        <span>Próximo: Módulo 2.5</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        SHIA - Super Humanos Inteligência Aumentada | Trilha 2 - Módulo 2.4
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+  </script>
+
+</body>
+</html>

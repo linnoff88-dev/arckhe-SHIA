@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.9: Monetização e Construção de Audiência | SHIA</title>
+  <meta name="description" content="Transformando arte com IA em oportunidades profissionais e renda sustentável.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10B981',
+            dark: {
+              900: '#111827',
+              800: '#1f2937',
+              700: '#374151',
+              600: '#4b5563'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+
+    /* Tópicos sempre visíveis */
+    .topic-content { display: block; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation Global -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo + INEMA.CLUB -->
+        <div class="flex items-center space-x-3">
+          <a href="../../index.html" class="flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 transition-colors">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">SHIA</span>
+          </a>
+          <span class="text-neutral-500 hidden sm:inline">|</span>
+          <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+            INEMA.CLUB
+          </a>
+        </div>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha0/trilha01.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-yellow-400 hover:bg-yellow-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>0
+          </a>
+          <a href="trilha12.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header do Módulo -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">
+        MÓDULO 1.9 - TRILHA 1
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">💰 Monetização e Construção de Audiência</h1>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Transformando arte com IA em oportunidades profissionais e renda sustentável
+      </p>
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-3 gap-4 mb-12">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">10</div>
+        <div class="text-xs text-neutral-400">Tópicos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">~2h</div>
+        <div class="text-xs text-neutral-400">Duração</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">Avançado</div>
+        <div class="text-xs text-neutral-400">Nível</div>
+      </div>
+    </div>
+
+    <!-- Conceito Central -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl p-8 border border-emerald-500/30">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">💡</span>
+          <div>
+            <h2 class="text-2xl font-bold text-emerald-400">Conceito Central</h2>
+            <p class="text-neutral-400">De hobby criativo a carreira sustentável</p>
+          </div>
+        </div>
+
+        <blockquote class="text-xl text-neutral-200 italic border-l-4 border-emerald-500 pl-6 mb-6">
+          "Talento sem estratégia é apenas potencial não realizado. Monetização inteligente <strong class="text-emerald-400">TRANSFORMA</strong> criatividade em carreira."
+        </blockquote>
+
+        <p class="text-neutral-300 mb-4">
+          A democratização da criação visual por IA abriu novas oportunidades econômicas. Porém, <strong>criar arte é diferente de construir um negócio</strong> sustentável em torno dela.
+        </p>
+
+        <p class="text-neutral-300">
+          Este módulo explora estratégias práticas de <strong>monetização, construção de audiência, precificação e posicionamento</strong> para artistas que trabalham com IA generativa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tópicos do Módulo -->
+    <section class="mb-12">
+      <div class="flex items-center mb-6">
+        <span class="text-3xl mr-3">📚</span>
+        <h2 class="text-2xl font-bold">Tópicos do Módulo</h2>
+      </div>
+
+      <div class="space-y-3">
+
+        <!-- Tópico 1 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">1</span>
+            <span class="font-semibold">💼 Modelos de Monetização para Arte com IA</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Existem <strong class="text-emerald-400">múltiplos caminhos</strong> para transformar habilidades artísticas com IA em renda:
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ <strong>Comissões personalizadas</strong> (trabalhos sob encomenda)</li>
+                <li>✓ <strong>Venda de arte digital</strong> (impressões, downloads)</li>
+                <li>✓ <strong>Licenciamento</strong> (uso comercial de obras)</li>
+                <li>✓ <strong>Assinaturas/Patreon</strong> (renda recorrente)</li>
+                <li>✓ <strong>Produtos físicos</strong> (print-on-demand)</li>
+                <li>✓ <strong>Educação</strong> (cursos, tutoriais, mentorias)</li>
+              </ul>
+            </div>
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h5 class="font-bold text-emerald-400 mb-2">🎯 Diversificação</h5>
+              <p class="text-neutral-300 text-sm">
+                Artistas de sucesso raramente dependem de uma única fonte de renda. Combine múltiplos modelos para estabilidade.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 2 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">2</span>
+            <span class="font-semibold">🎨 Construindo um Portfolio Impactante</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Seu portfolio é seu <strong class="text-emerald-400">maior ativo profissional</strong>. Deve comunicar identidade, habilidades e valor.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>• Curadoria > quantidade (mostre o melhor)</li>
+                <li>• Coerência visual e temática</li>
+                <li>• Processos e bastidores (prompts, iterações)</li>
+                <li>• Casos de uso práticos</li>
+                <li>• Website próprio + presença em plataformas</li>
+              </ul>
+            </div>
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h5 class="font-bold text-blue-400 mb-2">🌐 Presença Online</h5>
+              <p class="text-neutral-300 text-sm">
+                ArtStation, Behance, Dribbble, Instagram - escolha plataformas alinhadas com seu público-alvo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 3 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">3</span>
+            <span class="font-semibold">📱 Redes Sociais para Artistas de IA</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Redes sociais são fundamentais para <strong class="text-emerald-400">construir audiência e gerar oportunidades</strong>.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ <strong>Instagram:</strong> Visual-first, engajamento orgânico</li>
+                <li>✓ <strong>Twitter/X:</strong> Comunidade AI art, networking</li>
+                <li>✓ <strong>LinkedIn:</strong> Clientes B2B, trabalhos corporativos</li>
+                <li>✓ <strong>TikTok:</strong> Time-lapse, tutoriais, virabilidade</li>
+                <li>✓ <strong>YouTube:</strong> Processos longos, educação</li>
+              </ul>
+            </div>
+            <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+              <h5 class="font-bold text-purple-400 mb-2">📊 Consistência > Viralidade</h5>
+              <p class="text-neutral-300 text-sm">
+                Crescimento sustentável vem de presença consistente, não de posts virais esporádicos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 4 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">4</span>
+            <span class="font-semibold">🛒 Plataformas de Venda de Arte Digital</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Escolha plataformas que se alinham com <strong class="text-emerald-400">seu estilo, público e modelo de negócio</strong>.
+              </p>
+              <div class="grid md:grid-cols-2 gap-3 text-sm">
+                <div class="bg-dark-700 p-3 rounded">
+                  <strong class="text-emerald-400">Impressões:</strong> Etsy, Saatchi Art
+                </div>
+                <div class="bg-dark-700 p-3 rounded">
+                  <strong class="text-emerald-400">Produtos:</strong> Redbubble, Society6
+                </div>
+                <div class="bg-dark-700 p-3 rounded">
+                  <strong class="text-emerald-400">Digital:</strong> Gumroad, Artstation
+                </div>
+                <div class="bg-dark-700 p-3 rounded">
+                  <strong class="text-emerald-400">Assinaturas:</strong> Patreon, Ko-fi
+                </div>
+              </div>
+            </div>
+            <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+              <h5 class="font-bold text-yellow-400 mb-2">💡 Taxas e Comissões</h5>
+              <p class="text-neutral-300 text-sm">
+                Compare taxas, visibilidade e público de cada plataforma. Algumas cobram até 50% de comissão.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 5 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">5</span>
+            <span class="font-semibold">👔 Freelancing e Trabalho Comissionado</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Trabalhos comissionados oferecem <strong class="text-emerald-400">renda previsível e relacionamento direto com clientes</strong>.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ Plataformas: Upwork, Fiverr, 99designs</li>
+                <li>✓ Networking direto e indicações</li>
+                <li>✓ Contratos claros e termos de uso</li>
+                <li>✓ Revisões limitadas (evitar escopo infinito)</li>
+                <li>✓ Pagamento parcial adiantado</li>
+              </ul>
+            </div>
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h5 class="font-bold text-emerald-400 mb-2">⚡ Velocidade como Vantagem</h5>
+              <p class="text-neutral-300 text-sm">
+                Com IA você pode iterar rapidamente. Ofereça múltiplas variações e entregas ágeis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 6 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">6</span>
+            <span class="font-semibold">💵 Precificação e Negociação</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Precificar arte com IA é desafiador. Considere <strong class="text-emerald-400">valor, não apenas tempo</strong>.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>• Pesquise concorrentes e mercado</li>
+                <li>• Valor percebido > custo de produção</li>
+                <li>• Precifique por resultado, não por hora</li>
+                <li>• Pacotes e tiers (básico/premium)</li>
+                <li>• Transparência sobre uso de IA</li>
+              </ul>
+            </div>
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h5 class="font-bold text-blue-400 mb-2">📈 Aumentos Graduais</h5>
+              <p class="text-neutral-300 text-sm">
+                À medida que sua reputação cresce, aumente preços progressivamente. Não subvalorize seu trabalho.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 7 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">7</span>
+            <span class="font-semibold">📜 Licenciamento de Obras</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Licenciamento permite <strong class="text-emerald-400">vender direitos de uso sem transferir propriedade</strong>.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ <strong>Uso pessoal:</strong> Preço mais baixo</li>
+                <li>✓ <strong>Uso comercial:</strong> Preço premium</li>
+                <li>✓ <strong>Exclusividade:</strong> Valor mais alto</li>
+                <li>✓ <strong>Royalties:</strong> Percentual por uso</li>
+                <li>✓ <strong>Licenças Creative Commons:</strong> Uso estratégico</li>
+              </ul>
+            </div>
+            <div class="bg-purple-900/20 p-4 rounded-lg border border-purple-500/30">
+              <h5 class="font-bold text-purple-400 mb-2">⚖️ Proteção Legal</h5>
+              <p class="text-neutral-300 text-sm">
+                Sempre defina termos claros de licenciamento. Consulte advogado para contratos importantes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 8 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">8</span>
+            <span class="font-semibold">🎓 Criando Cursos e Tutoriais</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Compartilhar conhecimento é uma <strong class="text-emerald-400">fonte de renda escalável e reputação</strong>.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ <strong>Plataformas:</strong> Udemy, Skillshare, Gumroad</li>
+                <li>✓ <strong>YouTube:</strong> Tutoriais gratuitos + monetização</li>
+                <li>✓ <strong>Mentorias 1:1:</strong> Alto valor, baixa escala</li>
+                <li>✓ <strong>Workshops ao vivo:</strong> Engajamento direto</li>
+              </ul>
+            </div>
+            <div class="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/30">
+              <h5 class="font-bold text-yellow-400 mb-2">🚀 Renda Passiva</h5>
+              <p class="text-neutral-300 text-sm">
+                Cursos bem produzidos geram renda recorrente com trabalho inicial concentrado.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 9 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">9</span>
+            <span class="font-semibold">🖼️ NFTs e Web3 para Artistas</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                NFTs oferecem <strong class="text-emerald-400">propriedade digital autenticada e royalties automáticos</strong>.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>• <strong>Plataformas:</strong> OpenSea, Foundation, SuperRare</li>
+                <li>• <strong>Royalties:</strong> 5-10% em vendas secundárias</li>
+                <li>• <strong>Comunidade:</strong> Engajamento web3</li>
+                <li>• <strong>Riscos:</strong> Volatilidade, taxas de gás</li>
+              </ul>
+            </div>
+            <div class="bg-emerald-900/20 p-4 rounded-lg border border-emerald-500/30">
+              <h5 class="font-bold text-emerald-400 mb-2">⚠️ Avaliação Crítica</h5>
+              <p class="text-neutral-300 text-sm">
+                NFTs não são panaceia. Estude o mercado, entenda custos e não invista mais do que pode perder.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tópico 10 -->
+        <div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden">
+          <div class="p-5 flex items-center border-b border-dark-700">
+            <span class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-dark-900 font-bold text-sm mr-4">10</span>
+            <span class="font-semibold">🤝 Marketing Pessoal e Networking</span>
+          </div>
+          <div class="p-5">
+            <div class="bg-dark-700/50 rounded-lg p-4 mb-4">
+              <p class="text-neutral-300 mb-3">
+                Sua <strong class="text-emerald-400">marca pessoal e conexões</strong> são tão importantes quanto suas habilidades técnicas.
+              </p>
+              <ul class="text-neutral-300 space-y-2">
+                <li>✓ Defina seu nicho e posicionamento único</li>
+                <li>✓ Compartilhe processos e aprendizados</li>
+                <li>✓ Colabore com outros artistas</li>
+                <li>✓ Participe de comunidades online e eventos</li>
+                <li>✓ Seja autêntico e consistente</li>
+              </ul>
+            </div>
+            <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+              <h5 class="font-bold text-blue-400 mb-2">🌟 Autenticidade</h5>
+              <p class="text-neutral-300 text-sm">
+                No mundo saturado de IA, sua perspectiva única e voz autêntica são seus maiores diferenciais.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Resumo / Checklist -->
+    <section class="mb-12">
+      <div class="bg-primary/10 rounded-2xl p-8 border border-primary/30">
+        <h2 class="text-2xl font-bold text-primary mb-6 text-center">✅ Resumo do Módulo</h2>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Múltiplos modelos de monetização</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Portfolio curado e impactante</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Presença estratégica em redes sociais</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Precificação baseada em valor</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Licenciamento e proteção legal</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-emerald-400 mr-2">✓</span>
+            <span class="text-neutral-300">Marca pessoal autêntica e networking</span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="trilha12.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-primary/90 transition-colors">
+            <span>Voltar para Trilha 1</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegação -->
+    <div class="flex justify-between items-center">
+      <a href="modulo-1-8.html" class="inline-flex items-center space-x-2 text-neutral-400 hover:text-emerald-400 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Módulo 1.8</span>
+      </a>
+      <a href="modulo-1-10.html" class="inline-flex items-center space-x-2 px-6 py-3 bg-emerald-500 text-dark-900 rounded-lg font-bold hover:bg-emerald-400 transition-colors">
+        <span>Próximo: Módulo 1.10</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-500 text-sm">
+        SHIA - Super Humanos Inteligência Aumentada | Trilha 1 - Módulo 1.9
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+  </script>
+
+</body>
+</html>

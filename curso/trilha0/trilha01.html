@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 0: Introdução - Parte 1 | SHIA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .border-dark-700 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-200 { color: #334155 !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-3">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">SHIA</span>
+          </a>
+          <span class="text-neutral-500 hidden sm:inline">|</span>
+          <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+            INEMA.CLUB
+          </a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="trilha01.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">
+            <span class="hidden sm:inline">Trilha </span>0
+          </a>
+          <a href="../trilha1/trilha11.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/trilha21.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/trilha31.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-400 rounded-full text-sm font-semibold mb-4">
+        TRILHA 0 - PARTE 1: FUNDAMENTOS
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        🧠 Bem-vindo ao Mundo da IA
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
+        Os fundamentos essenciais da Inteligência Aumentada e Engenharia de Prompts. Base obrigatória para todas as trilhas.
+      </p>
+    </div>
+
+    <!-- Imagem de Capa -->
+    <div class="mb-12">
+      <img
+        src="../../doc/imagens/introducao/inteligencia_aumentada_conceito.webp"
+        alt="Inteligência Aumentada: Humano + IA trabalhando juntos"
+        class="w-full max-w-4xl mx-auto rounded-2xl shadow-xl border border-dark-600/50"
+      />
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-yellow-400">5</div>
+        <div class="text-xs text-neutral-400">Módulos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-yellow-400">50</div>
+        <div class="text-xs text-neutral-400">Tópicos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-yellow-400">Parte 1</div>
+        <div class="text-xs text-neutral-400">de 2</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-yellow-400">~5h</div>
+        <div class="text-xs text-neutral-400">Conteúdo</div>
+      </div>
+    </div>
+
+    <!-- Navigation Parts -->
+    <div class="flex justify-center gap-4 mb-12">
+      <a href="trilha01.html" class="px-6 py-3 bg-yellow-500 text-dark-900 rounded-xl font-bold hover:bg-yellow-400 transition-colors">
+        Parte 1 (1-5)
+      </a>
+      <a href="trilha02.html" class="px-6 py-3 bg-dark-700 text-neutral-300 rounded-xl font-bold hover:bg-dark-600 transition-colors border border-dark-600">
+        Parte 2 (6-10)
+      </a>
+    </div>
+
+    <!-- Modules -->
+    <div class="space-y-6">
+
+      <!-- Módulo 0.1 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.1
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Bem-vindo à Revolução da IA</h2>
+              <p class="text-sm text-neutral-400">O que é Inteligência Aumentada e por que ela é a verdadeira revolução</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🧠 O que é Inteligência Aumentada?
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> A Inteligência Aumentada (IAu) representa uma mudança de paradigma: da automação para a colaboração. Em vez de substituir humanos, a IAu cria ferramentas que amplificam a inteligência humana.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> É a revolução porque não nos torna obsoletos, mas nos torna melhores, mais rápidos e mais inteligentes em tudo o que fazemos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Colaboração humano-IA, amplificação de habilidades, co-piloto inteligente, democratização de capacidades.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📜 A História da IA e o Surgimento da IAu
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Desde Turing e Dartmouth 1956, passando pelos invernos da IA até o ressurgimento com deep learning nos anos 2010.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Entender a jornada ajuda a compreender por que a IAu surgiu como resposta pragmática aos desafios da IA.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Teste de Turing, IA simbólica, redes neurais, deep learning, GPUs, Big Data.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ⚖️ IA Pura vs. Inteligência Aumentada
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> IA Pura busca automação completa. IAu foca na colaboração, combinando velocidade da máquina com intuição humana.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> A combinação é mais poderosa que qualquer um dos dois isoladamente.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Automação vs colaboração, tomada de decisão humana, insights aumentados, feedback loop.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎨 Como a IAu Potencializa a Criatividade
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> A IAu atua como catalisador criativo - supera bloqueios, acelera prototipagem, oferece perspectivas inesperadas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Libera o criador das tarefas repetitivas para focar no que importa: visão, narrativa e emoção.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Brainstorming aumentado, variações instantâneas, fusão de estilos, cocriação.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              💼 Aplicações no Dia a Dia e nos Negócios
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Da medicina ao direito, do design ao desenvolvimento - a IAu já está presente em nosso cotidiano.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> O profissional continua no centro, mas suas habilidades são turbinadas pela IA.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Diagnóstico assistido, pesquisa jurídica, GitHub Copilot, Grammarly, Canva AI.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎯 O Papel do Prompt na Comunicação com IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> O prompt é o volante e os pedais do seu co-piloto IA. A engenharia de prompt é a nova competência fundamental.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Um bom prompt guia a IA para resultados brilhantes e inesperados.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Contexto, persona, formato, objetivo, chain-of-thought, few-shot learning.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🛠️ Ferramentas Essenciais de IAu
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Ecossistema de ferramentas: ChatGPT, Claude, Gemini para texto; Midjourney, DALL-E para imagem; Copilot para código.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Cada ferramenta tem forças específicas - a maestria está em combiná-las.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> LLMs, text-to-image, code assistants, workflow integrado, stack pessoal.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ⚖️ Ética e Responsabilidade na Era da IAu
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Viés algorítmico, propriedade intelectual, deepfakes e desinformação - questões éticas complexas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Com grande poder vem grande responsabilidade - usar IA de forma ética é essencial.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Bias, copyright, transparência, verificação de informação, uso responsável.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🚀 O Futuro do Trabalho e o Profissional Aumentado
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> A tecnologia não elimina empregos, transforma-os. O futuro pertence ao Profissional Aumentado.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> As habilidades mais valorizadas serão humanas: pensamento crítico, criatividade, inteligência emocional.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Learnability, colaboração humano-IA, adaptabilidade, alfabetização em IA.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🏗️ Construindo seu Próprio Co-piloto
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Primeiros passos práticos: experimentar ferramentas, construir seu stack, criar prompts personalizados.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Você não usa uma IA genérica - você constrói um assistente que entende seu contexto e estilo.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Documento de prompts, templates reutilizáveis, persona customizada, workflow pessoal.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(1)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-1.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 0.2 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.2
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">A Essência da Engenharia de Prompts</h2>
+              <p class="text-sm text-neutral-400">A arte de conversar com a IA e obter resultados extraordinários</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎯 A Importância da Clareza e do Contexto
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> A base de um prompt eficaz é a clareza. A IA não lê pensamentos - precisa de instruções explícitas e contexto rico.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Um prompt vago leva a resultados genéricos; um prompt claro leva a resultados precisos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Briefing detalhado, contexto explícito, instruções específicas, público-alvo definido.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔬 Engenharia de Prompts: Arte e Ciência
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Disciplina de projetar e refinar entradas para obter os melhores resultados de modelos de linguagem.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Mistura experimentação (arte) com princípios estruturados (ciência).</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Processo iterativo, refinamento, testes A/B de prompts, otimização contínua.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎭 Persona e Tom de Voz
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Instruir a IA a adotar uma persona específica, influenciando tom, estilo e vocabulário da resposta.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Vital para criar conteúdo alinhado com marca, público ou propósito específico.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Role-playing, especialistas virtuais, adaptação de linguagem, consistência de voz.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📚 O Poder dos Exemplos: Few-Shot Prompting
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Fornecer exemplos dentro do prompt para guiar a IA no padrão e formato esperados.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Técnica poderosa que ajuda o modelo a entender exatamente o que você quer.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Zero-shot, one-shot, few-shot, exemplos de entrada/saída, padrões implícitos.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📋 Instruções, Restrições e Formato de Saída
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Além de dizer O QUE fazer, dizer COMO fazer e O QUE NÃO fazer.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Essencial para obter resultados prontos para uso, no formato correto.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> JSON, Markdown, listas, contagem de palavras, exclusões, delimitadores.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔗 Chain-of-Thought: Guiando o Raciocínio
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Técnica que incentiva o modelo a "pensar em voz alta", detalhando passos lógicos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Melhora precisão em problemas complexos de matemática, lógica e raciocínio.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Passo a passo, raciocínio explícito, verificação de lógica, decomposição de problemas.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              💻 Prompts para Geração de Código
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Técnicas específicas para gerar código: linguagem, bibliotecas, funcionalidade, exemplos de uso.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> LLMs são ferramentas poderosas para desenvolvedores quando bem direcionados.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Especificação técnica, docstrings, edge cases, testes unitários, refatoração.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              💡 Prompts para Criatividade e Brainstorming
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Prompts abertos para tarefas criativas, usando "e se..." e combinações improváveis.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> A IA como parceira de brainstorming pode desbloquear novas ideias surpreendentes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Divergência criativa, analogias, restrições criativas, múltiplas variações.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔄 Iteração e Refinamento de Prompts
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Raramente o primeiro prompt é o melhor - a maestria está na iteração contínua.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Analisar respostas, identificar falhas, refinar prompts é ciclo de melhoria constante.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Versionamento de prompts, análise de resultados, ajustes incrementais, documentação.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📊 Aplicações Práticas e Estudos de Caso
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Exemplos reais de engenharia de prompts em marketing, educação, desenvolvimento.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Ver aplicações práticas ajuda a entender o impacto e versatilidade dos prompts.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Cases de sucesso, ROI de prompts, templates por indústria, benchmarks.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(2)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-2.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 0.3 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.3
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Principais Ferramentas e Modelos de IA</h2>
+              <p class="text-sm text-neutral-400">GPT-4, Claude, Gemini, Midjourney e o ecossistema de ferramentas</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🤖 Introdução aos LLMs (Large Language Models)
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Modelos de linguagem treinados em bilhões de textos que entendem e geram linguagem natural.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Base de toda a revolução da IA generativa atual.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Transformers, tokens, contexto, parâmetros, fine-tuning, temperatura.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🌟 GPT-4 e OpenAI: O Pioneiro
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> O modelo que popularizou a IA generativa. Versátil, multimodal, excelente para raciocínio complexo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Referência do mercado com maior ecossistema de integrações.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> ChatGPT, GPT-4 Turbo, visão, APIs, plugins, GPTs customizados.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎭 Claude e Anthropic: Segurança e Contexto
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Modelo focado em segurança e contexto longo (200K tokens). Excelente para análise de documentos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Ideal para tarefas que exigem processar grandes volumes de texto.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Constitutional AI, context window, Artifacts, projetos, análise de PDFs.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              💎 Gemini e Google: Multimodalidade
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Modelo nativo multimodal do Google, integrado ao ecossistema Google (Search, Docs, Gmail).</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Forte em processamento de imagens, vídeos e integração com serviços Google.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Ultra, Pro, Flash, AI Studio, integração Workspace, Gemini Advanced.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🦙 Llama e Meta: Open Source
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Família de modelos open source da Meta que democratizou o acesso a LLMs poderosos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Permite customização, hospedagem local, e uso sem custos de API.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Open source, fine-tuning local, Ollama, modelos derivados, privacidade.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎨 Midjourney: Arte Visual de Alto Nível
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Ferramenta líder em geração de imagens com qualidade artística excepcional.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Padrão da indústria para arte conceitual, design e ilustração.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Discord, aspect ratio, stylize, chaos, quality, versões, vary, zoom.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🖼️ DALL-E 3: Integração e Precisão
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Gerador de imagens da OpenAI, integrado ao ChatGPT, com excelente compreensão de prompts.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Facilidade de uso e integração direta com fluxo de trabalho ChatGPT.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Prompt rewriting, inpainting, outpainting, variações, editor.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎬 Ferramentas de Áudio e Vídeo
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> ElevenLabs para voz, Suno para música, Runway e Pika para vídeo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Produção multimídia completa agora acessível a qualquer pessoa.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Text-to-speech, voice cloning, text-to-music, text-to-video, motion.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              💻 Ferramentas de Código: Copilot e Cursor
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Assistentes de programação que sugerem, completam e explicam código.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Aceleram drasticamente o desenvolvimento de software.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> GitHub Copilot, Cursor, Replit AI, autocomplete, chat, code review.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔧 Automação: Zapier, Make e n8n
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Ferramentas no-code para conectar aplicativos e automatizar fluxos de trabalho com IA.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Integrar IA em processos de negócio sem programar.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Zaps, scenarios, workflows, triggers, actions, webhooks, APIs.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(3)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-3.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 0.4 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.4
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">A Anatomia de um Prompt Perfeito</h2>
+              <p class="text-sm text-neutral-400">Estrutura, elementos-chave e padrões que funcionam</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🧬 A Estrutura Básica de um Prompt
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Componentes fundamentais: Persona + Contexto + Tarefa + Formato + Restrições.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Framework replicável para criar prompts eficazes de forma consistente.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Instruções de sistema, delimitadores, seções claras, hierarquia de informação.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎭 Definindo a Persona Ideal
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> "Você é um..." - definir quem a IA deve ser para a tarefa específica.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> A persona influencia tom, vocabulário, nível de detalhe e abordagem.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Especialista, professor, consultor, criativo, analista, coach.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📝 Contexto Rico e Relevante
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Background necessário para a IA entender a situação completa.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Quanto mais contexto relevante, mais precisa e útil será a resposta.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Situação atual, objetivo final, público-alvo, restrições do projeto.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎯 Tarefa Clara e Específica
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Instrução precisa do que você quer que a IA faça - o "verbo" do prompt.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Tarefas vagas geram resultados vagos; tarefas específicas geram resultados úteis.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Verbos de ação, escopo definido, entregável claro, critérios de sucesso.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📋 Formato de Saída Desejado
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Como a resposta deve ser estruturada: lista, tabela, JSON, parágrafos, código.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Formato correto = resposta pronta para uso, sem necessidade de reformatar.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Markdown, JSON, CSV, bullet points, numeração, headers, código formatado.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🚫 Restrições e Exclusões
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> O que NÃO fazer, evitar, ou limitar na resposta.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Previne respostas indesejadas e mantém o foco no essencial.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> "Não mencione...", "Evite...", "Limite a...", "Sem jargão técnico".</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📚 Exemplos como Guias
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Incluir exemplos de entrada/saída desejada para guiar o modelo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Exemplos são a forma mais eficaz de comunicar padrões complexos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Few-shot, demonstração por exemplo, padrão implícito, template.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔤 Uso de Delimitadores e Marcadores
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Usar """, ###, XML tags para separar seções do prompt claramente.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Melhora a compreensão do modelo sobre a estrutura do prompt.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Triple quotes, hashtags, XML tags, seções nomeadas, hierarquia visual.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔬 Prompts para Diferentes Casos de Uso
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Templates específicos para escrita, análise, código, brainstorming, tradução.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Cada tipo de tarefa tem estrutura ótima diferente.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Templates por categoria, biblioteca de prompts, padrões reutilizáveis.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ✅ Checklist do Prompt Perfeito
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Lista de verificação antes de enviar: persona, contexto, tarefa, formato, exemplos, restrições.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Garantir qualidade consistente em todos os seus prompts.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Quality assurance, revisão, completude, clareza, especificidade.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(4)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-4.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 0.5 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-yellow-500/20 rounded-xl flex items-center justify-center text-yellow-400 font-bold text-lg mr-4">
+              0.5
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Zero-Shot e Few-Shot Prompting</h2>
+              <p class="text-sm text-neutral-400">Aprendendo com poucos exemplos e técnicas avançadas</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              0️⃣ Zero-Shot Prompting: Sem Exemplos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Pedir à IA para realizar uma tarefa sem fornecer nenhum exemplo prévio.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Simples e rápido, funciona bem para tarefas comuns e bem definidas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Instrução direta, confiança no pré-treinamento, generalização.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              1️⃣ One-Shot Prompting: Um Exemplo
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Fornecer um único exemplo de entrada/saída antes da tarefa real.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Demonstra o padrão desejado de forma concisa.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Exemplo demonstrativo, padrão implícito, formato esperado.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              📚 Few-Shot Prompting: Múltiplos Exemplos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Fornecer 2-5 exemplos para estabelecer claramente o padrão desejado.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Técnica mais poderosa para tarefas complexas ou formatos específicos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Variedade de exemplos, edge cases, consistência, in-context learning.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ⚖️ Quando Usar Cada Técnica
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Critérios para escolher entre zero, one ou few-shot para cada situação.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Otimizar tokens e resultados escolhendo a técnica certa.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Complexidade da tarefa, formato específico, custo de tokens, tempo.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🎯 Selecionando Exemplos Eficazes
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Critérios para escolher os melhores exemplos: diversidade, representatividade, clareza.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Exemplos mal escolhidos podem confundir mais do que ajudar.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Variação, cobertura de casos, qualidade sobre quantidade.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔢 Classificação com Few-Shot
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Usar exemplos para ensinar categorização: sentimento, tópico, intenção.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Classificação é uma das aplicações mais comuns e poderosas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Labels, categorias balanceadas, exemplos por classe, confidence.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ✍️ Geração de Texto com Few-Shot
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Usar exemplos para definir estilo, tom e formato de texto gerado.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Manter consistência de voz e estilo em produções em escala.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Tom de voz, estrutura, comprimento, vocabulário específico.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🔄 Transformação de Dados com Few-Shot
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Converter formatos, estruturar dados, extrair informações seguindo padrões.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Automatizar transformações de dados complexas sem código.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Parsing, extração, normalização, estruturação, limpeza de dados.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              ⚠️ Armadilhas e Erros Comuns
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Erros frequentes: exemplos inconsistentes, poucos/muitos exemplos, overfitting.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> Evitar problemas que degradam a qualidade das respostas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Bias de exemplos, ordem importa, limite de contexto, diversidade.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-yellow-400 mr-2">▸</span>
+              🏋️ Exercícios Práticos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">O que é:</strong> Exercícios hands-on para praticar zero, one e few-shot em diferentes cenários.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-yellow-400">Por que aprender:</strong> A prática deliberada é essencial para dominar essas técnicas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-yellow-400">Conceitos-chave:</strong> Classificação de sentimento, extração de entidades, geração de resumos.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <button onclick="openModal(5)" class="px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-xl font-semibold border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1">
+            📖 Ver em Modal
+          </button>
+          <a href="modulo-0-5.html" class="px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-dark-900 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/25">
+            📄 Ver Completo
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="flex justify-between items-center mt-12 pt-8 border-t border-dark-600">
+      <a href="../../index.html" class="flex items-center space-x-2 text-neutral-400 hover:text-yellow-400 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Página Inicial</span>
+      </a>
+      <a href="trilha02.html" class="flex items-center space-x-2 px-6 py-3 bg-yellow-500 text-dark-900 rounded-xl font-bold hover:bg-yellow-400 transition-colors">
+        <span>Parte 2: Módulos 6-10</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-900 border-t border-dark-700 py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="flex items-center justify-center space-x-2 mb-4">
+        <span class="text-2xl">🧠</span>
+        <span class="font-bold text-lg text-yellow-400">SHIA</span>
+      </div>
+      <p class="text-neutral-500 text-sm mb-2">Super Humanos Inteligência Aumentada</p>
+      <p class="text-neutral-600 text-xs">© 2025 SHIA. IA não pensa por você. IA AMPLIFICA quem você é.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="module-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+      <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+      <div class="relative bg-dark-800 rounded-2xl border border-dark-600 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all">
+        <div class="sticky top-0 bg-dark-800 border-b border-dark-600 px-6 py-4 flex justify-between items-center z-10">
+          <h2 id="modal-title" class="text-xl font-bold text-yellow-400"></h2>
+          <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors">
+            <svg class="w-6 h-6 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modal-content" class="p-6"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Module URLs - carrega conteúdo completo das páginas dos módulos
+    const moduleUrls = {
+      1: 'modulo-0-1.html',
+      2: 'modulo-0-2.html',
+      3: 'modulo-0-3.html',
+      4: 'modulo-0-4.html',
+      5: 'modulo-0-5.html'
+    };
+
+    // Open Modal - carrega conteúdo da página do módulo
+    async function openModal(moduleNum) {
+      const modal = document.getElementById('module-modal');
+      const title = document.getElementById('modal-title');
+      const content = document.getElementById('modal-content');
+
+      // Mostra loading
+      title.textContent = 'Carregando...';
+      content.innerHTML = '<div class="text-center py-8"><div class="animate-spin w-8 h-8 border-2 border-yellow-400 border-t-transparent rounded-full mx-auto"></div></div>';
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      try {
+        const response = await fetch(moduleUrls[moduleNum]);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        // Pega o título do módulo
+        const moduleTitle = doc.querySelector('h1');
+        title.textContent = moduleTitle ? moduleTitle.textContent : `Módulo 0.${moduleNum}`;
+
+        // Pega o conteúdo principal (seção de tópicos)
+        const mainContent = doc.querySelector('main');
+        if (mainContent) {
+          // Remove navegação e elementos desnecessários
+          const clone = mainContent.cloneNode(true);
+          clone.querySelectorAll('nav, .navigation-buttons, footer').forEach(el => el.remove());
+
+          // Remove o header duplicado (já temos no modal)
+          const header = clone.querySelector('.text-center.mb-8, .text-center.mb-12');
+          if (header) header.remove();
+
+          content.innerHTML = '';
+          content.appendChild(clone);
+        }
+      } catch (error) {
+        content.innerHTML = '<p class="text-red-400 text-center py-8">Erro ao carregar conteúdo. <a href="' + moduleUrls[moduleNum] + '" class="underline">Clique aqui para abrir a página completa.</a></p>';
+      }
+    }
+
+    // Close Modal
+    function closeModal() {
+      const modal = document.getElementById('module-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Toggle Topic
+    function toggleTopic(button) {
+      const explanation = button.nextElementSibling;
+      const arrow = button.querySelector('span:first-child');
+
+      if (explanation.classList.contains('hidden')) {
+        explanation.classList.remove('hidden');
+        arrow.textContent = '▾';
+      } else {
+        explanation.classList.add('hidden');
+        arrow.textContent = '▸';
+      }
+    }
+
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

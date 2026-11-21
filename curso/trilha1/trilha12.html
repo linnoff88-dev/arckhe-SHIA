@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 1: Arte - Parte 2 | SHIA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-dark-800 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-dark-700 { background-color: #f1f5f9 !important; }
+    html:not(.dark) .border-dark-600 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .border-dark-700 { border-color: #e2e8f0 !important; }
+    html:not(.dark) .text-neutral-100 { color: #1e293b !important; }
+    html:not(.dark) .text-neutral-200 { color: #334155 !important; }
+    html:not(.dark) .text-neutral-300 { color: #475569 !important; }
+    html:not(.dark) .text-neutral-400 { color: #64748b !important; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-3">
+          <a href="../../index.html" class="flex items-center space-x-2 text-emerald-400 hover:text-emerald-300 transition-colors">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">SHIA</span>
+          </a>
+          <span class="text-neutral-500 hidden sm:inline">|</span>
+          <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+            INEMA.CLUB
+          </a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha0/trilha01.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-yellow-400 hover:bg-yellow-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>0
+          </a>
+          <a href="trilha11.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span class="hidden sm:inline">Trilha </span>1
+          </a>
+          <a href="../trilha2/trilha21.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>2
+          </a>
+          <a href="../trilha3/trilha31.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="hidden sm:inline">Trilha </span>3
+          </a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">
+        TRILHA 1 - PARTE 2: ARTE
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        🎨 Técnicas Avançadas e Profissionalização
+      </h1>
+      <p class="text-xl text-neutral-400 max-w-3xl mx-auto">
+        Domine ferramentas avançadas, pós-produção, monetização e ética para transformar arte com IA em carreira profissional.
+      </p>
+    </div>
+
+    <!-- Imagem de Capa -->
+    <div class="mb-12">
+      <img
+        src="../../doc/imagens/arte/capa_trilha_arte.webp"
+        alt="Trilha Arte: Expressão criativa com IA"
+        class="w-full max-w-4xl mx-auto rounded-2xl shadow-xl border border-dark-600/50"
+      />
+    </div>
+
+    <!-- Stats Banner -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">5</div>
+        <div class="text-xs text-neutral-400">Módulos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">50</div>
+        <div class="text-xs text-neutral-400">Tópicos</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">Parte 2</div>
+        <div class="text-xs text-neutral-400">de 2</div>
+      </div>
+      <div class="bg-dark-800 rounded-xl p-4 text-center border border-dark-600">
+        <div class="text-2xl font-bold text-emerald-400">~5h</div>
+        <div class="text-xs text-neutral-400">Conteúdo</div>
+      </div>
+    </div>
+
+    <!-- Navigation Parts -->
+    <div class="flex justify-center gap-4 mb-12">
+      <a href="trilha11.html" class="px-6 py-3 bg-dark-700 text-neutral-300 rounded-xl font-bold hover:bg-dark-600 transition-colors border border-dark-600">
+        Parte 1 (1-5)
+      </a>
+      <a href="trilha12.html" class="px-6 py-3 bg-emerald-500 text-dark-900 rounded-xl font-bold hover:bg-emerald-400 transition-colors">
+        Parte 2 (6-10)
+      </a>
+    </div>
+
+    <!-- Modules -->
+    <div class="space-y-6">
+
+      <!-- Módulo 1.6 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg mr-4">
+              1.6
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Ferramentas e Técnicas Avançadas de Geração</h2>
+              <p class="text-sm text-neutral-400">Dominar técnicas profissionais e recursos avançados</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎛️ ControlNet: Controle Preciso de Composição
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> ControlNet permite controlar poses, profundidade, bordas e composição de forma precisa usando imagens de referência.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Essencial para resultados profissionais e consistência composicional.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Pose detection, depth maps, edge detection, normal maps, semantic segmentation.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🖌️ Inpainting e Outpainting Avançado
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Técnicas para editar partes específicas de imagens ou expandir além dos limites originais.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Permite correções cirúrgicas e expansão criativa de obras.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Máscaras, blending, context-aware fill, extensão de canvas, seamless editing.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔄 Image-to-Image Workflows Profissionais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Transformar imagens existentes em estilos diferentes mantendo composição e estrutura.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Acelera workflow e garante controle sobre resultados.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Strength parameters, denoising, style transfer, sketch-to-art, photo-to-painting.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎲 Manipulação de Seeds e Variações
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Usar seeds para reproduzir e criar variações controladas de gerações bem-sucedidas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Permite iteração sistemática e reprodutibilidade de resultados.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Random seed, fixed seed, seed tweaking, A/B testing visual.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              ⚙️ Sampling Methods e Configurações Avançadas
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Diferentes algoritmos de sampling (Euler, DPM++, DDIM) afetam qualidade, velocidade e estilo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Otimizar qualidade versus tempo de geração.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Samplers, steps, CFG scale, clip skip, batch processing.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🧬 LoRAs e Custom Models
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Low-Rank Adaptations (LoRAs) são modelos personalizados leves que adicionam estilos, personagens ou conceitos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Expande vastamente possibilidades criativas sem treinar modelos completos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> LoRA installation, mixing LoRAs, weight adjustment, community models.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📊 Treinamento de Modelos Personalizados
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> DreamBooth e Textual Inversion para treinar modelos com seu próprio estilo, personagens ou objetos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Criar modelos únicos que entendem seu estilo pessoal.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Dataset preparation, training parameters, overfitting, model merging.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌐 ComfyUI e Workflows Visuais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Interface node-based para criar pipelines complexos de geração com controle total.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Máxima flexibilidade e automação de processos criativos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Node graphs, custom workflows, batch automation, advanced pipelines.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔬 Embeddings e Textual Inversion
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Ensinar novos conceitos ao modelo através de pequenos vetores de embeddings.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Adicionar conceitos específicos sem treinar modelo completo.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Token learning, concept extraction, negative embeddings, community libraries.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🚀 Hardware e Otimização de Performance
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Como configurar hardware (GPU, RAM, VRAM) e otimizar para geração rápida e eficiente.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Maximizar produtividade e reduzir custos operacionais.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> VRAM optimization, batch sizes, cloud GPUs, local vs cloud, cost efficiency.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex gap-3">
+          <button onclick="openModal(6)" class="flex-1 px-4 py-2 bg-dark-700 hover:bg-dark-600 rounded-lg text-sm font-medium text-neutral-300 transition-colors flex items-center justify-center">
+            <span class="mr-2">📖</span> Ver em Modal
+          </button>
+          <a href="modulo-1-6.html" class="flex-1 px-4 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-lg text-sm font-medium text-emerald-400 transition-colors flex items-center justify-center border border-emerald-500/30">
+            <span class="mr-2">🚀</span> Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 1.7 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg mr-4">
+              1.7
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Da Geração à Pós-Produção e Refinamento</h2>
+              <p class="text-sm text-neutral-400">Refinar e finalizar obras com qualidade profissional</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔍 Upscaling e Melhoria de Resolução
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Técnicas de upscaling com IA para aumentar resolução mantendo ou melhorando qualidade.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Essencial para impressão e uso profissional de obras geradas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> ESRGAN, Real-ESRGAN, 4x upscaling, detail enhancement, print preparation.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              ✨ Correção de Artefatos e Imperfeições
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Identificar e corrigir problemas comuns: mãos malformadas, anatomia incorreta, elementos estranhos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Diferença entre trabalho amador e profissional está nos detalhes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Inpainting corretivo, anatomia fix, artifact removal, detail cleanup.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎨 Integração com Photoshop e Ferramentas Tradicionais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Workflow híbrido: usar IA para geração base e ferramentas tradicionais para refinamento.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Combinar o melhor de ambos os mundos para resultados superiores.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Layer-based editing, masking, compositing, color grading, final touches.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌈 Color Grading e Ajustes Tonais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Ajustar cores, contraste, saturação e tonalidade para mood perfeito.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> A cor comunica emoção - dominar isso é essencial.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Curves, levels, HSL adjustment, LUTs, cinematic grading.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🖼️ Composição e Recorte Estratégico
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Recompor e recortar gerações para melhorar composição e impacto visual.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Mesmo grandes gerações podem ser melhoradas com crop inteligente.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Rule of thirds, golden ratio, negative space, focal points, aspect ratios.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              ✏️ Adicionando Detalhes Manuais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Pintar sobre gerações com tablets digitais para adicionar toques pessoais únicos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Adiciona autenticidade e diferenciação ao trabalho.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Digital painting, brush work, highlights, shadows, personal touches.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎭 Efeitos Especiais e Acabamentos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Adicionar efeitos de iluminação, partículas, atmosfera, texturas para resultado final polido.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Efeitos bem aplicados elevam dramaticamente a percepção de qualidade.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Light leaks, glow effects, atmospheric haze, grain, vignette, sharpening.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📐 Preparação para Diferentes Mídias
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Exportar e otimizar para web, impressão, redes sociais, produtos físicos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Cada mídia tem requisitos técnicos específicos.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Color spaces (RGB/CMYK), resolution (DPI/PPI), file formats, compression.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔗 Criando Mockups e Apresentações
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Apresentar trabalhos em contexto: frames, mockups de produtos, visualizações em ambiente.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Apresentação profissional aumenta valor percebido.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Mockup templates, smart objects, contextual presentation, portfolio pieces.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              💾 Gerenciamento de Arquivos e Versões
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Organizar prompts, gerações, versões, projetos para eficiência e rastreabilidade.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Organização é crucial quando lidando com centenas de gerações.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Naming conventions, version control, metadata, backup strategies, cloud storage.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex gap-3">
+          <button onclick="openModal(7)" class="flex-1 px-4 py-2 bg-dark-700 hover:bg-dark-600 rounded-lg text-sm font-medium text-neutral-300 transition-colors flex items-center justify-center">
+            <span class="mr-2">📖</span> Ver em Modal
+          </button>
+          <a href="modulo-1-7.html" class="flex-1 px-4 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-lg text-sm font-medium text-emerald-400 transition-colors flex items-center justify-center border border-emerald-500/30">
+            <span class="mr-2">🚀</span> Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 1.8 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg mr-4">
+              1.8
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Arte com Propósito: Comunicação, Negócios e Causas</h2>
+              <p class="text-sm text-neutral-400">Aplicar arte com IA em contextos comerciais e sociais</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              💼 Arte para Marcas e Identidade Visual
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Criar logos, paletas de cores, elementos visuais consistentes para marcas usando IA.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Alta demanda no mercado, excelente oportunidade de monetização.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Brand identity, logo design, color psychology, visual consistency, brand guidelines.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📢 Publicidade e Campanhas Visuais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Criar anúncios, banners, materiais promocionais impactantes rapidamente.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> IA acelera criação de variações A/B para campanhas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Ad design, call-to-action visuals, campaign concepts, market segmentation.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📱 Conteúdo para Redes Sociais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Produzir conteúdo visual consistente e atraente para Instagram, TikTok, LinkedIn.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Demanda massiva por conteúdo visual de qualidade.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Platform optimization, engagement design, viral aesthetics, content calendars.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📚 Ilustração Editorial e Publicações
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Criar ilustrações para artigos, revistas, blogs, livros e publicações online.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Editoras e criadores de conteúdo sempre precisam de ilustrações.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Editorial illustration, concept visualization, narrative images, licensing.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎮 Assets para Jogos e Aplicativos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Gerar personagens, cenários, ícones, texturas para desenvolvimento de games e apps.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Indústria de games é enorme e sempre necessita de arte.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Game art, sprite sheets, UI/UX design, asset packs, tileable textures.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🏢 Arquitetura e Visualização de Produtos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Criar visualizações arquitetônicas, mockups de produtos, renderizações de conceitos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Acelera processo de design e comunicação com clientes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Architectural rendering, product visualization, interior design, concept art.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌍 Arte para Causas Sociais e ONGs
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Usar arte generativa para comunicar causas ambientais, sociais, humanitárias.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Arte tem poder de mobilizar e conscientizar massas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Impactful visuals, awareness campaigns, emotional storytelling, social good.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎓 Materiais Educacionais e Didáticos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Criar diagramas, infográficos, ilustrações educativas para cursos e materiais pedagógicos.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Educação online cresce exponencialmente e demanda conteúdo visual.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Infographics, educational illustration, visual learning, course materials.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎁 Produtos Personalizados e Print-on-Demand
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Criar designs para camisetas, canecas, posters, adesivos em plataformas de POD.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Renda passiva com pouco investimento inicial.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> POD platforms, product design, niche markets, passive income, merchandising.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎪 Eventos e Experiências Imersivas
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Arte generativa para eventos, exposições, projeções, instalações interativas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Mercado premium com projetos de alto valor.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Installation art, projection mapping, interactive experiences, event design.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex gap-3">
+          <button onclick="openModal(8)" class="flex-1 px-4 py-2 bg-dark-700 hover:bg-dark-600 rounded-lg text-sm font-medium text-neutral-300 transition-colors flex items-center justify-center">
+            <span class="mr-2">📖</span> Ver em Modal
+          </button>
+          <a href="modulo-1-8.html" class="flex-1 px-4 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-lg text-sm font-medium text-emerald-400 transition-colors flex items-center justify-center border border-emerald-500/30">
+            <span class="mr-2">🚀</span> Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 1.9 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg mr-4">
+              1.9
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">Monetização e Construção de Audiência para Arte com IA</h2>
+              <p class="text-sm text-neutral-400">Transformar talento artístico em renda sustentável</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              💰 Modelos de Monetização: Visão Geral
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Freelancing, comissões, vendas diretas, licenciamento, assinaturas, produtos físicos, NFTs.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Diversificar fontes de renda aumenta estabilidade financeira.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Revenue streams, pricing strategies, value proposition, market positioning.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎨 Construindo um Portfolio Irresistível
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Como selecionar, organizar e apresentar seu melhor trabalho para atrair clientes.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Portfolio é sua vitrine profissional - precisa ser impecável.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Curation, presentation, case studies, storytelling, personal brand.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📱 Crescimento em Redes Sociais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Estratégias para crescer no Instagram, TikTok, X, Behance - onde seu público está.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Audiência = oportunidades de trabalho e vendas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Content strategy, engagement, algorithms, hashtags, consistency, authenticity.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🛍️ Vendendo Arte Digital e Impressões
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Plataformas como Etsy, Gumroad, ArtStation para vender downloads e impressões.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Renda passiva que escala sem limite de unidades vendidas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Digital products, print-on-demand, pricing, platform fees, customer service.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              💼 Freelancing e Plataformas de Trabalho
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Fiverr, Upwork, 99designs - como conseguir clientes e construir reputação.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Caminho rápido para primeiros clientes pagantes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Gig optimization, proposals, client communication, reviews, portfolio showcase.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🤝 Comissões e Trabalhos Personalizados
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Aceitar encomendas personalizadas de clientes - maior ticket médio.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Comissões customizadas são muito mais lucrativas que vendas padrão.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Commission process, deposits, revisions, contracts, client management.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📜 Licenciamento e Direitos Autorais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Vender direitos de uso comercial, exclusividade, territorialidade - maximizar valor.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Licenciamento pode gerar receita recorrente de uma mesma obra.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Usage rights, exclusivity, royalties, contracts, legal protection.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎓 Cursos e Educação como Produto
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Ensinar suas técnicas via cursos, tutoriais, workshops, mentorias.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Escala seu conhecimento e constrói autoridade no nicho.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Course creation, platforms (Gumroad, Udemy), pricing, marketing, student success.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              💎 NFTs e Arte Digital Colecionável
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Criar e vender NFTs - arte digital autenticada via blockchain.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Mercado emergente com possibilidade de vendas de alto valor.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Blockchain, minting, marketplaces (OpenSea, Foundation), royalties, community.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎯 Marketing Pessoal e Branding
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Construir marca pessoal forte, comunicar valor, destacar-se em mercado competitivo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Marca forte atrai clientes, justifica preços premium, abre portas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Personal branding, storytelling, differentiation, visibility, authority building.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex gap-3">
+          <button onclick="openModal(9)" class="flex-1 px-4 py-2 bg-dark-700 hover:bg-dark-600 rounded-lg text-sm font-medium text-neutral-300 transition-colors flex items-center justify-center">
+            <span class="mr-2">📖</span> Ver em Modal
+          </button>
+          <a href="modulo-1-9.html" class="flex-1 px-4 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-lg text-sm font-medium text-emerald-400 transition-colors flex items-center justify-center border border-emerald-500/30">
+            <span class="mr-2">🚀</span> Ver Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Módulo 1.10 -->
+      <div class="module-card bg-dark-800 rounded-2xl p-6 border border-dark-600">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 font-bold text-lg mr-4">
+              1.10
+            </div>
+            <div>
+              <h2 class="text-xl font-bold text-neutral-100">O Futuro da Criatividade e a Ética na Arte com IA</h2>
+              <p class="text-sm text-neutral-400">Navegar questões éticas e antecipar tendências futuras</p>
+            </div>
+          </div>
+        </div>
+        <ul class="topics-list space-y-1 mb-4">
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              ⚖️ Ética e Responsabilidade na Arte Generativa
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Questões sobre autoria, originalidade, transparência no uso de IA, respeito a artistas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Praticar ética é essencial para sustentabilidade da profissão e reputação pessoal.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Disclosure, attribution, fair use, artist compensation, ethical guidelines.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              📜 Propriedade Intelectual e Direitos Autorais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Questões legais: quem detém direitos sobre arte gerada por IA? Como proteger seu trabalho?</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Navegar complexidades legais protege você e seus clientes.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Copyright law, AI-generated content, ownership, legal frameworks, protection strategies.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌐 Bias e Representação em Modelos de IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Modelos refletem vieses dos dados de treinamento - questões de diversidade e representação.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Conscientização sobre vieses ajuda criar arte mais inclusiva e responsável.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Algorithmic bias, representation, inclusivity, awareness, mitigation strategies.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🚫 Deepfakes e Uso Malicioso de IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Consciência sobre potencial de desinformação, manipulação, uso antiético de ferramentas.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Artistas têm responsabilidade de não contribuir para desinformação.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Deepfakes, misinformation, consent, ethical boundaries, responsible creation.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🔮 Tendências Futuras em Arte com IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Video generativo em tempo real, arte 3D, VR/AR, integração com metaverso.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Antecipar tendências permite posicionamento estratégico para oportunidades futuras.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Real-time generation, 3D models, VR/AR art, metaverse, emerging technologies.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🤖 Colaboração Humano-IA Evoluindo
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> IA não substitui artistas - amplifica capacidades. O futuro é cocriação sofisticada.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Entender dinâmica de colaboração prepara para próxima geração de ferramentas.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Co-creation, augmentation vs replacement, hybrid workflows, creative partnership.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🎓 Educação e Democratização da Arte
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> IA democratiza criação artística - qualquer pessoa com visão pode criar.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Mudança de paradigma: criatividade não depende mais de anos de treinamento técnico.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Democratization, accessibility, learning curve, creative expression for all.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🌟 Impacto Cultural e Novas Formas de Arte
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> IA está criando novos gêneros, estilos, formas de expressão nunca vistas antes.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Ser pioneiro em novos movimentos artísticos traz reconhecimento e oportunidades.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> New art forms, cultural impact, artistic movements, innovation, legacy.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🏛️ Preservação e Arquivo de Arte Digital
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Como garantir que arte digital persista ao longo do tempo - questões de arquivo e preservação.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Obras digitais precisam de estratégias específicas de preservação para longevidade.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Digital archiving, format longevity, backups, blockchain authentication, museums.</p>
+            </div>
+          </li>
+          <li class="topic-item">
+            <button onclick="toggleTopic(this)" class="topic-button w-full text-left px-4 py-2 bg-dark-700/50 hover:bg-dark-700 rounded-lg transition-colors font-medium text-neutral-200 flex items-center">
+              <span class="text-emerald-400 mr-2">▸</span>
+              🚀 Sua Jornada Como Artista da Era IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">O que é:</strong> Reflexão sobre aprendizado, próximos passos, compromisso com crescimento contínuo.</p>
+              <p class="text-sm mb-1.5 text-neutral-300"><strong class="text-emerald-400">Por que aprender:</strong> Conclusão da trilha - mas apenas o começo da sua jornada artística com IA.</p>
+              <p class="text-sm text-neutral-300"><strong class="text-emerald-400">Conceitos-chave:</strong> Lifelong learning, community, experimentation, professional development, impact.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="flex gap-3">
+          <button onclick="openModal(10)" class="flex-1 px-4 py-2 bg-dark-700 hover:bg-dark-600 rounded-lg text-sm font-medium text-neutral-300 transition-colors flex items-center justify-center">
+            <span class="mr-2">📖</span> Ver em Modal
+          </button>
+          <a href="modulo-1-10.html" class="flex-1 px-4 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-lg text-sm font-medium text-emerald-400 transition-colors flex items-center justify-center border border-emerald-500/30">
+            <span class="mr-2">🚀</span> Ver Completo
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation Bottom -->
+    <div class="flex justify-center gap-4 mt-12">
+      <a href="trilha11.html" class="px-6 py-3 bg-dark-700 text-neutral-300 rounded-xl font-bold hover:bg-dark-600 transition-colors border border-dark-600">
+        ← Parte 1 (1-5)
+      </a>
+      <a href="trilha12.html" class="px-6 py-3 bg-emerald-500 text-dark-900 rounded-xl font-bold hover:bg-emerald-400 transition-colors">
+        Parte 2 (6-10)
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Modal -->
+  <div id="module-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+      <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+      <div class="relative bg-dark-800 rounded-2xl border border-dark-600 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div class="sticky top-0 bg-dark-800 border-b border-dark-600 px-6 py-4 flex justify-between items-center z-10">
+          <h2 id="modal-title" class="text-xl font-bold text-emerald-400"></h2>
+          <button onclick="closeModal()" class="p-2 hover:bg-dark-700 rounded-lg transition-colors">
+            <svg class="w-6 h-6 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="modal-content" class="p-6"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Module URLs - carrega conteúdo completo das páginas dos módulos
+    const moduleUrls = {
+      6: 'modulo-1-6.html',
+      7: 'modulo-1-7.html',
+      8: 'modulo-1-8.html',
+      9: 'modulo-1-9.html',
+      10: 'modulo-1-10.html'
+    };
+
+    // Open Modal - carrega conteúdo da página do módulo
+    async function openModal(moduleNum) {
+      const modal = document.getElementById('module-modal');
+      const title = document.getElementById('modal-title');
+      const content = document.getElementById('modal-content');
+
+      // Mostra loading
+      title.textContent = 'Carregando...';
+      content.innerHTML = '<div class="text-center py-8"><div class="animate-spin w-8 h-8 border-2 border-emerald-400 border-t-transparent rounded-full mx-auto"></div></div>';
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      try {
+        const response = await fetch(moduleUrls[moduleNum]);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        // Pega o título do módulo
+        const moduleTitle = doc.querySelector('h1');
+        title.textContent = moduleTitle ? moduleTitle.textContent : `Módulo 1.${moduleNum}`;
+
+        // Pega o conteúdo principal (seção de tópicos)
+        const mainContent = doc.querySelector('main');
+        if (mainContent) {
+          // Remove navegação e elementos desnecessários
+          const clone = mainContent.cloneNode(true);
+          clone.querySelectorAll('nav, .navigation-buttons, footer').forEach(el => el.remove());
+
+          // Remove o header duplicado (já temos no modal)
+          const header = clone.querySelector('.text-center.mb-8, .text-center.mb-12');
+          if (header) header.remove();
+
+          content.innerHTML = '';
+          content.appendChild(clone);
+        }
+      } catch (error) {
+        content.innerHTML = '<p class="text-red-400 text-center py-8">Erro ao carregar conteúdo. <a href="' + moduleUrls[moduleNum] + '" class="underline">Clique aqui para abrir a página completa.</a></p>';
+      }
+    }
+
+    // Close Modal
+    function closeModal() {
+      const modal = document.getElementById('module-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Toggle Topic
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const arrow = button.querySelector('span:first-child');
+
+      if (explanation.classList.contains('hidden')) {
+        explanation.classList.remove('hidden');
+        arrow.textContent = '▾';
+      } else {
+        explanation.classList.add('hidden');
+        arrow.textContent = '▸';
+      }
+    }
+
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
