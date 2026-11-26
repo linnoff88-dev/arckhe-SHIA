@@ -1,6 +1,6 @@
 # Layout Reference - Supercurso Nano Banana
 
-Documentação do sistema de layout e design utilizado nas páginas de conteúdo do curso.
+Documentaçêo do sistema de layout e design utilizado nas páginas de conteúdo do curso.
 
 ---
 
@@ -62,7 +62,7 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 
 ## 2. Paleta de Cores
 
-### Dark Mode (Padrão)
+### Dark Mode (Padrêo)
 | Nome | Código | Uso |
 |------|--------|-----|
 | `dark-900` | `#111827` | Fundo principal da página |
@@ -88,11 +88,11 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 | Cor | Uso |
 |-----|-----|
 | `emerald-400/500` | Sucesso, positivo, "fazer" |
-| `red-400/500` | Erro, alerta, "não fazer" |
-| `blue-400/500` | Informação, dados |
-| `yellow-400/500` | Aviso, atenção, logo Nano Banana |
+| `red-400/500` | Erro, alerta, "nêo fazer" |
+| `blue-400/500` | Informaçêo, dados |
+| `yellow-400/500` | Aviso, atençêo, logo Nano Banana |
 | `purple-400/500` | Especial, premium |
-| `cyan-400/500` | Tech, inovação |
+| `cyan-400/500` | Tech, inovaçêo |
 | `sky-400/500` | Links externos (INEMA.CLUB) |
 | `pink-400/500` | Beleza, feminino |
 | `orange-400/500` | Energia, urgência |
@@ -104,14 +104,14 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 
 ### 3.1 Navigation Global (Sticky Top)
 
-> ⚠️ **OBRIGATÓRIO**: O menu global DEVE aparecer em **TODAS as páginas** do curso, sem exceção.
+> ⚠️ **OBRIGATÓRIO**: O menu global DEVE aparecer em **TODAS as páginas** do curso, sem exceçêo.
 
 #### Elementos Obrigatórios do Menu:
 
 1. **Logo SHIA** (🧠) - Link para index.html
 2. **INEMA.CLUB** - Link externo OBRIGATÓRIO em sky-400, abre em nova aba
 3. **Links para TODAS as 4 Trilhas** (0, 1, 2, 3) - Sempre visíveis
-4. **Theme Toggle** - Botão para alternar dark/light mode
+4. **Theme Toggle** - Botêo para alternar dark/light mode
 
 ```html
 <!-- Navigation Global - OBRIGATÓRIO EM TODAS AS PÁGINAS -->
@@ -169,7 +169,7 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 | **Trilha 3** | Roxo | `bg-purple-500/20 text-purple-400 border border-purple-500/30` | `text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10` |
 
 **Propriedades:**
-- Posição: `sticky top-0`
+- Posiçêo: `sticky top-0`
 - Z-index: `50`
 - Altura: `h-14` (56px)
 - Background: `bg-dark-900/95 backdrop-blur-sm`
@@ -187,7 +187,7 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
   </span>
   <h1 class="text-4xl sm:text-5xl font-bold mb-4">[EMOJI] Título do Módulo</h1>
   <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
-    Descrição breve do módulo em 1-2 linhas.
+    Descriçêo breve do módulo em 1-2 linhas.
   </p>
 </div>
 ```
@@ -210,7 +210,7 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
     <div class="flex items-center mb-6">
       <span class="text-4xl mr-4">[EMOJI]</span>
       <div>
-        <h2 class="text-2xl font-bold text-[COR]-400">Título da Seção</h2>
+        <h2 class="text-2xl font-bold text-[COR]-400">Título da Seçêo</h2>
         <p class="text-neutral-400">Subtítulo explicativo</p>
       </div>
     </div>
@@ -235,7 +235,7 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 </section>
 ```
 
-### 3.6 Box de Informação Interna
+### 3.6 Box de Informaçêo Interna
 ```html
 <div class="bg-dark-700/50 rounded-xl p-6 mb-6">
   <h3 class="text-xl font-bold text-[COR]-400 mb-4">[EMOJI] Título</h3>
@@ -251,7 +251,7 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 </div>
 ```
 
-### 3.8 Grid de Comparação (Fazer/Não Fazer)
+### 3.8 Grid de Comparaçêo (Fazer/Nêo Fazer)
 ```html
 <div class="grid md:grid-cols-2 gap-6 mb-6">
   <div class="bg-emerald-900/20 p-6 rounded-xl border border-emerald-500/30">
@@ -264,7 +264,7 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
     </ul>
   </div>
   <div class="bg-red-900/20 p-6 rounded-xl border border-red-500/30">
-    <h4 class="font-bold text-red-400 mb-4">✗ O que NÃO fazer</h4>
+    <h4 class="font-bold text-red-400 mb-4">✗ O que NêO fazer</h4>
     <ul class="space-y-3 text-neutral-300">
       <li class="flex items-start">
         <span class="text-red-400 mr-2">✗</span>
@@ -283,7 +283,7 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
   </div>
   <div>
     <h4 class="text-xl font-bold text-[COR]-400">Título do Passo</h4>
-    <p class="text-neutral-400">Descrição</p>
+    <p class="text-neutral-400">Descriçêo</p>
   </div>
 </div>
 ```
@@ -366,7 +366,7 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 |--------|-----|
 | `mb-12` | Entre seções principais |
 | `mb-6` | Entre sub-seções |
-| `mb-4` | Entre elementos dentro de uma seção |
+| `mb-4` | Entre elementos dentro de uma seçêo |
 | `mb-2` | Entre linhas de texto |
 | `p-8` | Padding de cards principais |
 | `p-6` | Padding de boxes internos |
@@ -383,8 +383,8 @@ Documentação do sistema de layout e design utilizado nas páginas de conteúdo
 | Elemento | Classes |
 |----------|---------|
 | Título da página (h1) | `text-4xl sm:text-5xl font-bold` |
-| Título de seção (h2) | `text-2xl font-bold` |
-| Título de sub-seção (h3) | `text-xl font-bold` |
+| Título de seçêo (h2) | `text-2xl font-bold` |
+| Título de sub-seçêo (h3) | `text-xl font-bold` |
 | Título pequeno (h4) | `font-bold` ou `font-semibold` |
 | Parágrafo destaque | `text-lg text-neutral-300` |
 | Parágrafo normal | `text-neutral-300` |
@@ -425,7 +425,7 @@ Todas as páginas usam `max-w-4xl` para largura máxima do conteúdo:
 | Transparência | `bg-dark-900/95` (95% opacidade) |
 | Gradiente | `bg-gradient-to-br from-[cor]-900/30 to-dark-800` |
 | Hover em link | `hover:text-primary transition-colors` |
-| Hover em botão | `hover:bg-primary/90 transition-colors` |
+| Hover em botêo | `hover:bg-primary/90 transition-colors` |
 | Borda colorida à esquerda | `border-l-4 border-[cor]-500` |
 
 ---
@@ -450,16 +450,16 @@ Todas as páginas usam `max-w-4xl` para largura máxima do conteúdo:
 
 > ⚠️ **OBRIGATÓRIO**: Todas as imagens do projeto devem seguir estas especificações para garantir performance.
 
-### Formato e Otimização
+### Formato e Otimizaçêo
 
-| Propriedade | Valor | Descrição |
+| Propriedade | Valor | Descriçêo |
 |-------------|-------|-----------|
-| **Formato** | WebP | Obrigatório - melhor compressão |
+| **Formato** | WebP | Obrigatório - melhor compressêo |
 | **Largura máxima** | 1200px | Redimensionar imagens maiores |
 | **Qualidade** | 80 | Balanço entre qualidade e tamanho |
-| **Otimização** | optimize=True | Usar compressão otimizada |
+| **Otimizaçêo** | optimize=True | Usar compressêo otimizada |
 
-### Script de Otimização (Python/Pillow)
+### Script de Otimizaçêo (Python/Pillow)
 
 ```python
 from PIL import Image
@@ -496,14 +496,14 @@ doc/imagens/
 ```html
 <img
   src="doc/imagens/geral/nome_imagem.webp"
-  alt="Descrição acessível da imagem"
+  alt="Descriçêo acessível da imagem"
   class="w-full max-w-4xl mx-auto rounded-2xl shadow-xl border border-dark-600/50"
 />
 ```
 
 ### Checklist de Imagens
 
-- [ ] Formato WebP (não PNG/JPG)
+- [ ] Formato WebP (nêo PNG/JPG)
 - [ ] Largura máxima 1200px
 - [ ] Qualidade 80
 - [ ] Alt text descritivo
@@ -511,18 +511,18 @@ doc/imagens/
 
 ---
 
-## 11. Checklist de Criação de Página
+## 11. Checklist de Criaçêo de Página
 
 - [ ] Estrutura HTML base com Tailwind config
 - [ ] Navigation sticky com INEMA.CLUB e 4 trilhas (OBRIGATÓRIO)
-- [ ] Header com badge, título e descrição
+- [ ] Header com badge, título e descriçêo
 - [ ] Stats banner (se aplicável)
 - [ ] Seções com gradiente para conceitos principais
-- [ ] Boxes de comparação (fazer/não fazer)
+- [ ] Boxes de comparaçêo (fazer/nêo fazer)
 - [ ] Alertas coloridos para dicas
 - [ ] Resumo final com CTA
 - [ ] Footer
-- [ ] Script de inicialização do tema
+- [ ] Script de inicializaçêo do tema
 - [ ] Verificar responsividade
 - [ ] Verificar dark/light mode
 - [ ] Imagens otimizadas (WebP, 1200px, quality 80)

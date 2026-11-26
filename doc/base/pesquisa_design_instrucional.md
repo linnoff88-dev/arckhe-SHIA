@@ -5,17 +5,17 @@
 ### 12 Práticas Essenciais (University of San Diego)
 
 1. **Identificar objetivos e metas claras** - Todo curso deve ter pelo menos uma meta mensurável
-2. **Ir além da introdução básica** - Estabelecer presença do instrutor com vídeos de boas-vindas
-3. **Enfatizar comunicação e disponibilidade** - Criar "horários de atendimento virtual"
-4. **Criar um curso engajante** - Usar cenários, quizzes, gamificação
+2. **Ir além da introduçêo básica** - Estabelecer presença do instrutor com vídeos de boas-vindas
+3. **Enfatizar comunicaçêo e disponibilidade** - Criar "horários de atendimento virtual"
+4. **Criar um curso engajante** - Usar cenários, quizzes, gamificaçêo
 5. **Abraçar aprendizagem ativa** - Atividades de arrastar e soltar, simulações
 6. **Manter conciso** - Conteúdo direto, vídeos de até 15 minutos
-7. **Não complicar a navegação** - Direções claras sobre próximos passos
+7. **Nêo complicar a navegaçêo** - Direções claras sobre próximos passos
 8. **Usar gráficos engajantes e áudio efetivo** - Imagens limpas, esquema de cores pequeno
 9. **Ser específico com números** - Estatísticas significativas para reforçar impacto
 10. **Colocar-se no lugar do aluno** - Avaliar engajamento e facilidade de uso
 11. **Explorar novas ferramentas** - Adaptar-se às novidades
-12. **Recompensar bom trabalho** - Certificados de conclusão
+12. **Recompensar bom trabalho** - Certificados de conclusêo
 
 ## 10 Fases da Aprendizagem Transformacional (Mezirow)
 
@@ -28,30 +28,30 @@
 
 1. **Dilema Desorientador** - O choque que abala a perspectiva atual
 2. **Auto-exame** - Questionar crenças e como se relacionam com o dilema
-3. **Avaliação Crítica** - Avaliar e validar suposições passadas
+3. **Avaliaçêo Crítica** - Avaliar e validar suposições passadas
 4. **Reconhecimento de Experiências Compartilhadas** - Perceber que outros passam pelo mesmo
 5. **Explorar Opções para Novos Comportamentos** - Novos papéis e ações compatíveis
-6. **Planejar um Curso de Ação** - Estratégia para aprender novas perspectivas
-7. **Aquisição de Conhecimento** - Implementar o plano
+6. **Planejar um Curso de Açêo** - Estratégia para aprender novas perspectivas
+7. **Aquisiçêo de Conhecimento** - Implementar o plano
 8. **Experimentar Novos Papéis** - Colocar habilidades em teste
 9. **Construir Confiança** - Desenvolver autoconsciência
-10. **Reintegração** - Aclimatar-se ao novo eu
+10. **Reintegraçêo** - Aclimatar-se ao novo eu
 
 ### 3 Estágios Centrais:
-1. **Crise pessoal** - Catalisador da transformação
-2. **Reflexão** - Examinar o que pensávamos saber
-3. **Ação** - Aprender, experimentar, integrar
+1. **Crise pessoal** - Catalisador da transformaçêo
+2. **Reflexêo** - Examinar o que pensávamos saber
+3. **Açêo** - Aprender, experimentar, integrar
 
-## Aplicação ao Curso de IA
+## Aplicaçêo ao Curso de IA
 
 ### Estrutura Recomendada por Módulo:
 - Objetivo claro e mensurável
 - Dilema/problema real para resolver
 - Conteúdo conciso (máx 15 min por vídeo)
-- Atividades práticas de aplicação
-- Reflexão e auto-avaliação
-- Exercícios de experimentação
-- Certificação/reconhecimento
+- Atividades práticas de aplicaçêo
+- Reflexêo e auto-avaliaçêo
+- Exercícios de experimentaçêo
+- Certificaçêo/reconhecimento
 
 ### Elementos Visuais Sugeridos:
 - Diagramas de fluxo
@@ -66,7 +66,7 @@
 
 ### Tópicos Principais Identificados:
 
-**1. Introdução**
+**1. Introduçêo**
 - LLMs e como funcionam
 - O que é um Prompt
 - O que é Engenharia de Prompts
@@ -74,15 +74,15 @@
 
 **2. Terminologia Comum**
 - LLM, Tokens, Context Window
-- Alucinação, Pesos/Parâmetros do Modelo
+- Alucinaçêo, Pesos/Parâmetros do Modelo
 - Fine-Tuning vs Prompt Engineering
 - RAG, Agentes, Prompt Injection
 - AI vs AGI
 
-**3. Configuração de LLM**
+**3. Configuraçêo de LLM**
 - Parâmetros de Amostragem (Temperature, Top-K, Top-P)
 - Controle de Output (Max Tokens, Stop Sequences)
-- Penalidades de Repetição
+- Penalidades de Repetiçêo
 - Outputs Estruturados
 
 **4. Técnicas de Prompting**
@@ -106,8 +106,8 @@
 - Usar variáveis/placeholders
 - Experimentar formatos
 - Ajustar sampling
-- Proteção contra prompt injection
-- Automatizar avaliação
+- Proteçêo contra prompt injection
+- Automatizar avaliaçêo
 - Documentar versões de prompts
 - Otimizar latência e custo
 - Usar delimitadores (backticks, XML tags)
