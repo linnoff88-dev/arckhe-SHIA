@@ -72,7 +72,7 @@ Esta seçêo apresenta as principais ferramentas de IA generativa disponíveis p
 
 **Exemplos Práticos de Prompts:**
 
-- **Midjourney:** "Create a cinematic shot of a lone astronaut discovering an ancient alien artifact on a desolate planet, with a dramatic and contrasting lighting scheme. --ar 16:9 --style raw"
+- **Midjourney:** "Create a cARCKHÉtic shot of a lone astronaut discovering an ancient alien artifact on a desolate planet, with a dramatic and contrasting lighting scheme. --ar 16:9 --style raw"
 - **DALL-E 3:** "An oil painting of a serene Japanese garden in a misty morning, with a stone lantern and a koi pond. The style should be reminiscent of traditional ukiyo-e prints."
 
 **Sugestões Visuais:**

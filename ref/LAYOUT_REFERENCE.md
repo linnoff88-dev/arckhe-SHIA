@@ -93,7 +93,7 @@ Documentaçêo do sistema de layout e design utilizado nas páginas de conteúdo
 | `yellow-400/500` | Aviso, atençêo, logo Nano Banana |
 | `purple-400/500` | Especial, premium |
 | `cyan-400/500` | Tech, inovaçêo |
-| `sky-400/500` | Links externos (INEMA.CLUB) |
+| `sky-400/500` | Links externos (ARCKHÉ AI) |
 | `pink-400/500` | Beleza, feminino |
 | `orange-400/500` | Energia, urgência |
 | `amber-400/500` | Destaque suave |
@@ -109,7 +109,7 @@ Documentaçêo do sistema de layout e design utilizado nas páginas de conteúdo
 #### Elementos Obrigatórios do Menu:
 
 1. **Logo SHIA** (🧠) - Link para index.html
-2. **INEMA.CLUB** - Link externo OBRIGATÓRIO em sky-400, abre em nova aba
+2. **ARCKHÉ AI** - Link externo OBRIGATÓRIO em sky-400, abre em nova aba
 3. **Links para TODAS as 4 Trilhas** (0, 1, 2, 3) - Sempre visíveis
 4. **Theme Toggle** - Botêo para alternar dark/light mode
 
@@ -118,15 +118,15 @@ Documentaçêo do sistema de layout e design utilizado nas páginas de conteúdo
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-14">
-      <!-- Logo + INEMA.CLUB (OBRIGATÓRIO) -->
+      <!-- Logo + ARCKHÉ AI (OBRIGATÓRIO) -->
       <div class="flex items-center space-x-3">
         <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 transition-colors">
           <span class="text-2xl">🧠</span>
           <span class="font-bold text-lg hidden sm:inline">SHIA</span>
         </a>
         <span class="text-neutral-500 hidden sm:inline">|</span>
-        <a href="http://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
-          INEMA.CLUB
+        <a href="http://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-lg hidden sm:inline transition-colors">
+          ARCKHÉ AI
         </a>
       </div>
 
@@ -174,7 +174,7 @@ Documentaçêo do sistema de layout e design utilizado nas páginas de conteúdo
 - Altura: `h-14` (56px)
 - Background: `bg-dark-900/95 backdrop-blur-sm`
 - Logo: 🧠 SHIA (yellow-400)
-- **INEMA.CLUB**: OBRIGATÓRIO - Link externo em sky-400 (azul claro), separado por `|`, abre em nova aba
+- **ARCKHÉ AI**: OBRIGATÓRIO - Link externo em sky-400 (azul claro), separado por `|`, abre em nova aba
 - **4 Trilhas**: OBRIGATÓRIO - Todas sempre visíveis no menu
 - Trilha ativa: fundo e borda coloridos
 - Responsivo: texto compacto em mobile
@@ -514,7 +514,7 @@ doc/imagens/
 ## 11. Checklist de Criaçêo de Página
 
 - [ ] Estrutura HTML base com Tailwind config
-- [ ] Navigation sticky com INEMA.CLUB e 4 trilhas (OBRIGATÓRIO)
+- [ ] Navigation sticky com ARCKHÉ AI e 4 trilhas (OBRIGATÓRIO)
 - [ ] Header com badge, título e descriçêo
 - [ ] Stats banner (se aplicável)
 - [ ] Seções com gradiente para conceitos principais

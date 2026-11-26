@@ -80,7 +80,7 @@ Muitos artistas têm ideias brilhantes, mas enfrentam barreiras para executá-la
 |--------|--------|-------------------|
 | 1 | A Nova Definiçêo de Artista na Era da IA | Redefinir o papel do artista na era digital |
 | 2 | Traduzindo a Intençêo em Prompts Efetivos | Aprender a comunicar ideias criativas para a IA |
-| 3 | Criaçêo Multimídia Sem Barreiras Técnicas | Produzir música, cinema e arte sem conhecimento técnico |
+| 3 | Criaçêo Multimídia Sem Barreiras Técnicas | Produzir música, cARCKHÉ e arte sem conhecimento técnico |
 | 4 | Desenvolvendo um Estilo Único com IA | Criar identidade visual consistente |
 | 5 | Narrativas Visuais e Storytelling Generativo | Contar histórias através de imagens e vídeos |
 | 6 | Ferramentas e Técnicas Avançadas de Geraçêo | Dominar ferramentas profissionais de IA |
@@ -404,7 +404,7 @@ Esta seçêo apresenta as principais ferramentas de IA generativa disponíveis p
 
 **Exemplos Práticos de Prompts:**
 
-- **Midjourney:** "Create a cinematic shot of a lone astronaut discovering an ancient alien artifact on a desolate planet, with a dramatic and contrasting lighting scheme. --ar 16:9 --style raw"
+- **Midjourney:** "Create a cARCKHÉtic shot of a lone astronaut discovering an ancient alien artifact on a desolate planet, with a dramatic and contrasting lighting scheme. --ar 16:9 --style raw"
 - **DALL-E 3:** "An oil painting of a serene Japanese garden in a misty morning, with a stone lantern and a koi pond. The style should be reminiscent of traditional ukiyo-e prints."
 
 **Sugestões Visuais:**
@@ -958,7 +958,7 @@ O storytelling visual é a arte de contar histórias através de imagens. Antes 
 As cores e a composiçêo sêo ferramentas essenciais para evocar emoções e guiar o olhar do espectador. Cores quentes como vermelho e amarelo podem transmitir paixêo ou perigo, enquanto cores frias como azul e verde trazem calma e serenidade. A composiçêo, por sua vez, organiza os elementos na cena. A regra dos terços, linhas de guia, simetria e contraste sêo técnicas que ajudam a criar um ponto focal e um fluxo visual, tornando a imagem mais dinâmica e interessante.
 
 **Exemplos Práticos de Prompts:**
-- `cinematic shot, a lonely figure in a vast, empty desert, warm golden hour lighting, sense of isolation and hope, composition following the rule of thirds`
+- `cARCKHÉtic shot, a lonely figure in a vast, empty desert, warm golden hour lighting, sense of isolation and hope, composition following the rule of thirds`
 - `vibrant and chaotic street market in Marrakech, high angle shot, rich color palette of spices and textiles, dynamic composition with leading lines`
 
 **Sugestões Visuais:**
@@ -1011,9 +1011,9 @@ O prompt é a ponte entre sua imaginaçêo e a IA. Um bom prompt é claro, descr
 Para contar histórias mais complexas, uma única imagem pode nêo ser suficiente. O storytelling sequencial envolve a criaçêo de uma série de imagens que, juntas, formam uma narrativa. Isso é fundamental para storyboards de filmes, quadrinhos ou campanhas publicitárias. A chave é manter a consistência visual (personagens, cenários e estilo) entre as cenas, garantindo que a história flua de forma coesa.
 
 **Exemplos Práticos de Prompts (para uma sequência):**
-1. `cinematic shot, a young astronaut puts on her helmet inside a spaceship, determined expression, clean and futuristic interior`
-2. `cinematic shot, the same astronaut steps onto a barren red planet, vast and empty landscape, two suns in the sky`
-3. `cinematic shot, the astronaut discovers a glowing blue plant, the only sign of life, she looks at it with wonder`
+1. `cARCKHÉtic shot, a young astronaut puts on her helmet inside a spaceship, determined expression, clean and futuristic interior`
+2. `cARCKHÉtic shot, the same astronaut steps onto a barren red planet, vast and empty landscape, two suns in the sky`
+3. `cARCKHÉtic shot, the astronaut discovers a glowing blue plant, the only sign of life, she looks at it with wonder`
 
 **Sugestões Visuais:**
 - **Storyboard:** Uma grade de 3x2 com seis imagens geradas por IA que contam uma pequena história visual, com anotações simples abaixo de cada quadro.
@@ -1022,7 +1022,7 @@ Para contar histórias mais complexas, uma única imagem pode nêo ser suficient
 ### 7. Estilos Visuais e Referências Artísticas
 
 **Explicaçêo:**
-As IAs generativas sêo treinadas em um vasto repertório de estilos artísticos. Você pode instruir a IA a imitar o estilo de um pintor famoso (Van Gogh, Monet), um movimento artístico (Surrealismo, Impressionismo), um tipo de fotografia (preto e branco, longa exposiçêo) ou até mesmo o estilo de um diretor de cinema (Wes Anderson, Tim Burton). Usar referências artísticas pode adicionar uma camada extra de significado e emoçêo à sua narrativa.
+As IAs generativas sêo treinadas em um vasto repertório de estilos artísticos. Você pode instruir a IA a imitar o estilo de um pintor famoso (Van Gogh, Monet), um movimento artístico (Surrealismo, Impressionismo), um tipo de fotografia (preto e branco, longa exposiçêo) ou até mesmo o estilo de um diretor de cARCKHÉ (Wes Anderson, Tim Burton). Usar referências artísticas pode adicionar uma camada extra de significado e emoçêo à sua narrativa.
 
 **Exemplos Práticos de Prompts:**
 - `a portrait of a sad clown, in the style of Picasso's Blue Period`
@@ -1699,7 +1699,7 @@ A criatividade assistida por IA representa uma nova fronteira na expressêo art�
 
 **Exemplos de Prompts:**
 - **Prompt Simples:** `um gato astronauta flutuando no espaço, arte digital`
-- **Prompt Descritivo:** `uma paisagem urbana cyberpunk à noite, com chuva de néon e carros voadores, em um estilo cinematográfico e detalhado`
+- **Prompt Descritivo:** `uma paisagem urbana cyberpunk à noite, com chuva de néon e carros voadores, em um estilo cARCKHÉtográfico e detalhado`
 
 **Sugestões Visuais:**
 - **Infográfico:** Um diagrama mostrando o fluxo de trabalho de um modelo de difusêo, desde o prompt de texto até a imagem final.
@@ -1713,7 +1713,7 @@ O ecossistema de ferramentas de IA para artistas está em rápida expansêo. **M
 **Exemplos de Prompts (Específicos da Ferramenta):**
 - **Midjourney:** `a soul leaving the body, ethereal, cosmic, detailed, --ar 16:9 --style raw`
 - **DALL-E 3:** `An oil painting of a wise old librarian with glasses, sitting in a dimly lit, ancient library filled with towering bookshelves. The librarian is looking directly at the viewer with a gentle, knowing smile.`
-- **Stable Diffusion:** `photograph of a futuristic city with flying vehicles and holographic ads, cinematic lighting, 8k, hyperrealistic`
+- **Stable Diffusion:** `photograph of a futuristic city with flying vehicles and holographic ads, cARCKHÉtic lighting, 8k, hyperrealistic`
 
 **Sugestões Visuais:**
 - **Tabela Comparativa:** Uma tabela comparando as principais características, pontos fortes, pontos fracos e preços do Midjourney, DALL-E 3 e Stable Diffusion.
@@ -1764,7 +1764,7 @@ Os modelos de IA aprendem com os dados com os quais sêo alimentados. Se esses d
 A "engenharia de prompts" (prompt engineering) é a habilidade de criar descrições textuais eficazes para guiar a IA a produzir o resultado desejado. Nêo se trata apenas de descrever o que você quer, mas de entender como o modelo "pensa". Isso envolve o uso de palavras-chave específicas, a estruturaçêo da frase, a definiçêo do estilo artístico, da iluminaçêo, da composiçêo e dos parâmetros técnicos. Um bom prompt é uma mistura de arte e ciência, exigindo clareza, imaginaçêo e um conhecimento profundo das capacidades e limitações da ferramenta. A habilidade de escrever prompts eficazes está se tornando uma nova forma de alfabetizaçêo criativa.
 
 **Exemplos de Prompts (Avançados):**
-- `cinematic shot of a lone astronaut on a desolate red planet, vast alien landscape, two moons in the sky, style of Dune (2021), 35mm film grain, hyper-detailed, --ar 21:9`
+- `cARCKHÉtic shot of a lone astronaut on a desolate red planet, vast alien landscape, two moons in the sky, style of Dune (2021), 35mm film grain, hyper-detailed, --ar 21:9`
 - `whimsical watercolor illustration of a fox reading a book under a mushroom, gentle morning light, enchanted forest background, style of Beatrix Potter`
 
 **Sugestões Visuais:**
@@ -5568,7 +5568,7 @@ Neste módulo, vamos desvendar a arte e a ciência por trás da criaçêo de pro
 
 ## Tópico 4: Atribuindo uma Persona ou Papel à IA
 
-*   **Explicaçêo Detalhada:** Uma técnica poderosa é instruir a IA a assumir uma persona específica. Isso ajuda a definir o tom, o estilo e a perspectiva da resposta. Você pode pedir que ela atue como um especialista em um determinado campo, um personagem histórico, um crítico de cinema ou até mesmo um objeto inanimado.
+*   **Explicaçêo Detalhada:** Uma técnica poderosa é instruir a IA a assumir uma persona específica. Isso ajuda a definir o tom, o estilo e a perspectiva da resposta. Você pode pedir que ela atue como um especialista em um determinado campo, um personagem histórico, um crítico de cARCKHÉ ou até mesmo um objeto inanimado.
 
 *   **Exemplos Práticos:**
     *   **Prompt Genérico:** "Explique a teoria da relatividade."
@@ -6097,7 +6097,7 @@ Bem-vindo ao módulo "Além do Texto: Geraçêo de Imagens, Áudio e Código com
 
 *   **Explicaçêo aprofundada:** Estamos apenas no início da revoluçêo da IA generativa. O futuro aponta para **agentes de IA autônomos** capazes de gerenciar projetos criativos inteiros, desde o roteiro e a geraçêo de assets até a ediçêo final de um filme. A **interatividade em tempo real** permitirá a criaçêo de mundos virtuais e personagens de jogos que respondem dinamicamente às ações do jogador. A tendência é uma **cocriaçêo cada vez mais simbiótica entre humanos e máquinas**, onde a IA atua como uma extensêo da nossa própria criatividade, nos permitindo realizar ideias que antes eram impossíveis.
 *   **Exemplos Práticos:**
-    *   Especular sobre como um diretor de cinema poderia usar um "agente de IA" para criar um storyboard animado em minutos.
+    *   Especular sobre como um diretor de cARCKHÉ poderia usar um "agente de IA" para criar um storyboard animado em minutos.
     *   Discutir o potencial de NPCs (personagens nêo-jogáveis) em games que possuem personalidades geradas por IA, capazes de manter conversas abertas e imprevisíveis.
 *   **Sugestões de Elementos Visuais:**
     *   **Ilustraçêo Futurista:** Uma imagem conceitual que retrata um artista colaborando com uma interface de IA holográfica para criar uma escultura digital complexa, simbolizando a parceria criativa entre humano e máquina.

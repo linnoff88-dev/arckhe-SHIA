@@ -127,7 +127,7 @@ DiagnêÂ³stico, estratêÂ©gia e escala de negêÂ³cios
 |---|--------|------|
 | 1 | A Nova DefiniêÂ§êÂ£o de Artista | Redefinir o papel do artista na era digital |
 | 2 | Traduzindo IntenêÂ§êÂ£o em Prompts | Comunicar ideias criativas para a IA |
-| 3 | CriaêÂ§êÂ£o MultimêÂ­dia Sem Barreiras | Produzir mêÂºsica, cinema e arte |
+| 3 | CriaêÂ§êÂ£o MultimêÂ­dia Sem Barreiras | Produzir mêÂºsica, cARCKHÉ e arte |
 | 4 | Desenvolvendo um Estilo êÅ¡nico | Criar identidade visual consistente |
 | 5 | Narrativas Visuais e Storytelling | Contar histêÂ³rias atravêÂ©s de imagens |
 | 6 | Ferramentas AvanêÂ§adas de GeraêÂ§êÂ£o | Dominar ferramentas profissionais |
@@ -216,7 +216,7 @@ DiagnêÂ³stico, estratêÂ©gia e escala de negêÂ³cios
   <p><strong>Arckhé AI</strong></p>
 </div>
 
-git clone https://github.com/inematds/SHIA.git
+git clone https://github.com/linnoff88-dev/SHIA.git
 
 # Entre na pasta
 cd SHIA
@@ -298,8 +298,8 @@ Este projeto estêÂ¡ sob a licenêÂ§a MIT. Veja o arquivo [LICENSE](LICE
 
 ## ê°Å¸âÂ¬ Contato
 
-- **GitHub:** [@inematds](https://github.com/inematds)
-- **Email:** inematds@gmail.com
+- **GitHub:** [@linnoff88-dev](https://github.com/linnoff88-dev)
+- **Email:** linnoff88-dev@gmail.com
 
 ---
 

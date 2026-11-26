@@ -28,7 +28,7 @@ O storytelling visual é a arte de contar histórias através de imagens. Antes 
 As cores e a composiçêo sêo ferramentas essenciais para evocar emoções e guiar o olhar do espectador. Cores quentes como vermelho e amarelo podem transmitir paixêo ou perigo, enquanto cores frias como azul e verde trazem calma e serenidade. A composiçêo, por sua vez, organiza os elementos na cena. A regra dos terços, linhas de guia, simetria e contraste sêo técnicas que ajudam a criar um ponto focal e um fluxo visual, tornando a imagem mais dinâmica e interessante.
 
 **Exemplos Práticos de Prompts:**
-- `cinematic shot, a lonely figure in a vast, empty desert, warm golden hour lighting, sense of isolation and hope, composition following the rule of thirds`
+- `cARCKHÉtic shot, a lonely figure in a vast, empty desert, warm golden hour lighting, sense of isolation and hope, composition following the rule of thirds`
 - `vibrant and chaotic street market in Marrakech, high angle shot, rich color palette of spices and textiles, dynamic composition with leading lines`
 
 **Sugestões Visuais:**
@@ -81,9 +81,9 @@ O prompt é a ponte entre sua imaginaçêo e a IA. Um bom prompt é claro, descr
 Para contar histórias mais complexas, uma única imagem pode nêo ser suficiente. O storytelling sequencial envolve a criaçêo de uma série de imagens que, juntas, formam uma narrativa. Isso é fundamental para storyboards de filmes, quadrinhos ou campanhas publicitárias. A chave é manter a consistência visual (personagens, cenários e estilo) entre as cenas, garantindo que a história flua de forma coesa.
 
 **Exemplos Práticos de Prompts (para uma sequência):**
-1. `cinematic shot, a young astronaut puts on her helmet inside a spaceship, determined expression, clean and futuristic interior`
-2. `cinematic shot, the same astronaut steps onto a barren red planet, vast and empty landscape, two suns in the sky`
-3. `cinematic shot, the astronaut discovers a glowing blue plant, the only sign of life, she looks at it with wonder`
+1. `cARCKHÉtic shot, a young astronaut puts on her helmet inside a spaceship, determined expression, clean and futuristic interior`
+2. `cARCKHÉtic shot, the same astronaut steps onto a barren red planet, vast and empty landscape, two suns in the sky`
+3. `cARCKHÉtic shot, the astronaut discovers a glowing blue plant, the only sign of life, she looks at it with wonder`
 
 **Sugestões Visuais:**
 - **Storyboard:** Uma grade de 3x2 com seis imagens geradas por IA que contam uma pequena história visual, com anotações simples abaixo de cada quadro.
@@ -92,7 +92,7 @@ Para contar histórias mais complexas, uma única imagem pode nêo ser suficient
 ### 7. Estilos Visuais e Referências Artísticas
 
 **Explicaçêo:**
-As IAs generativas sêo treinadas em um vasto repertório de estilos artísticos. Você pode instruir a IA a imitar o estilo de um pintor famoso (Van Gogh, Monet), um movimento artístico (Surrealismo, Impressionismo), um tipo de fotografia (preto e branco, longa exposiçêo) ou até mesmo o estilo de um diretor de cinema (Wes Anderson, Tim Burton). Usar referências artísticas pode adicionar uma camada extra de significado e emoçêo à sua narrativa.
+As IAs generativas sêo treinadas em um vasto repertório de estilos artísticos. Você pode instruir a IA a imitar o estilo de um pintor famoso (Van Gogh, Monet), um movimento artístico (Surrealismo, Impressionismo), um tipo de fotografia (preto e branco, longa exposiçêo) ou até mesmo o estilo de um diretor de cARCKHÉ (Wes Anderson, Tim Burton). Usar referências artísticas pode adicionar uma camada extra de significado e emoçêo à sua narrativa.
 
 **Exemplos Práticos de Prompts:**
 - `a portrait of a sad clown, in the style of Picasso's Blue Period`

@@ -93,7 +93,7 @@ Bem-vindo ao módulo "Além do Texto: Geraçêo de Imagens, Áudio e Código com
 
 *   **Explicaçêo aprofundada:** Estamos apenas no início da revoluçêo da IA generativa. O futuro aponta para **agentes de IA autônomos** capazes de gerenciar projetos criativos inteiros, desde o roteiro e a geraçêo de assets até a ediçêo final de um filme. A **interatividade em tempo real** permitirá a criaçêo de mundos virtuais e personagens de jogos que respondem dinamicamente às ações do jogador. A tendência é uma **cocriaçêo cada vez mais simbiótica entre humanos e máquinas**, onde a IA atua como uma extensêo da nossa própria criatividade, nos permitindo realizar ideias que antes eram impossíveis.
 *   **Exemplos Práticos:**
-    *   Especular sobre como um diretor de cinema poderia usar um "agente de IA" para criar um storyboard animado em minutos.
+    *   Especular sobre como um diretor de cARCKHÉ poderia usar um "agente de IA" para criar um storyboard animado em minutos.
     *   Discutir o potencial de NPCs (personagens nêo-jogáveis) em games que possuem personalidades geradas por IA, capazes de manter conversas abertas e imprevisíveis.
 *   **Sugestões de Elementos Visuais:**
     *   **Ilustraçêo Futurista:** Uma imagem conceitual que retrata um artista colaborando com uma interface de IA holográfica para criar uma escultura digital complexa, simbolizando a parceria criativa entre humano e máquina.

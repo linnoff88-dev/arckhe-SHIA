@@ -178,7 +178,7 @@ A IA elimina barreiras técnicas, estruturas caras e dependência de equipes gra
 |---|--------|----------|
 | 1 | **A Nova Definiçêo de Artista na Era da IA** | Redefinir o papel do artista na era digital |
 | 2 | **Traduzindo a Intençêo em Prompts Efetivos** | Comunicar ideias criativas para a IA |
-| 3 | **Criaçêo Multimídia Sem Barreiras Técnicas** | Produzir música, cinema e arte sem conhecimento técnico |
+| 3 | **Criaçêo Multimídia Sem Barreiras Técnicas** | Produzir música, cARCKHÉ e arte sem conhecimento técnico |
 | 4 | **Desenvolvendo um Estilo Único com IA** | Criar identidade visual consistente |
 | 5 | **Narrativas Visuais e Storytelling Generativo** | Contar histórias através de imagens e vídeos |
 | 6 | **Ferramentas e Técnicas Avançadas de Geraçêo** | Dominar ferramentas profissionais de IA |

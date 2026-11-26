@@ -44,7 +44,7 @@ Neste módulo, vamos desvendar a arte e a ciência por trás da criaçêo de pro
 
 ## Tópico 4: Atribuindo uma Persona ou Papel à IA
 
-*   **Explicaçêo Detalhada:** Uma técnica poderosa é instruir a IA a assumir uma persona específica. Isso ajuda a definir o tom, o estilo e a perspectiva da resposta. Você pode pedir que ela atue como um especialista em um determinado campo, um personagem histórico, um crítico de cinema ou até mesmo um objeto inanimado.
+*   **Explicaçêo Detalhada:** Uma técnica poderosa é instruir a IA a assumir uma persona específica. Isso ajuda a definir o tom, o estilo e a perspectiva da resposta. Você pode pedir que ela atue como um especialista em um determinado campo, um personagem histórico, um crítico de cARCKHÉ ou até mesmo um objeto inanimado.
 
 *   **Exemplos Práticos:**
     *   **Prompt Genérico:** "Explique a teoria da relatividade."
